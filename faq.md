@@ -76,7 +76,7 @@
 
 CDN 回源，流量从 US3 流向 UCDN，这部分流量 UCDN 不计费，由 US3 计费，请参考下图：
 
-![](/images/UCDN回源US3.png)  
+![](/images/UCDN回源US3.png)
 计费价格详见：[计量计费](/ufile/bill/new)
 
 ## 镜像回源支持的空间类型
@@ -92,3 +92,21 @@ CDN 回源，流量从 US3 流向 UCDN，这部分流量 UCDN 不计费，由 US
 US3 API 支持用户存储不超过 8KB 的自定义元数据，在用户调用 API 进行文件上传请求时，可在请求头中增加 `X-Ufile-Meta-*` 字段，如增加文件 MD5 信息，可增加请求头 `X-Ufile-Meta-MD5` ，在执行 Head、Get 请求时，可从 Response Header 中获取 `X-Ufile-Meta-MD5:[*]` 的内容。更多内容可参考[对象存储API文档](https://docs.ucloud.cn/api/ufile-api/README)
 
 **注意：Header 请求中 `X-Ufile-Meta-xxx` 限制 `xxx` 只能包含英文字母、数字和连接符（短横线 '-'）**
+
+## 子帐号授权后进入文件管理页面提示：非法授权
+
+1. 添加子账号时，如果没有选择 "API访问" 那么这个子账号默认就是没有密钥的
+
+![](/images/子账号授权_1.png)
+
+2. 有两个修改入口
+
+- 有管理权限的账号：到用户管理页面，进入具体某个用户的详情页，然后创建密钥
+
+![](/images/子账号授权_2.png)
+
+- 为当前登录的账号创建密钥：到当前账号的账号管理页面，点击API密钥菜单，进行创建密钥
+
+![](/images/子账号授权_3.png)
+
+第1种适合管理人员操作，第2种适合子账号给自己创建密钥
