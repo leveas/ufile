@@ -1,5 +1,19 @@
 # 常见问题
 
+## 报错 Open leveldb err: resource temporarily unavailable
+
+### 问题原因
+
+1. 使用了老版本的us3cli(<=v1.3.0)，老版本的us3cli不支持多个进程同时使用。
+
+2. 在使用新版本us3cli时，同时执行同一条命令多次。
+
+### 解决方案
+
+针对原因1，您可以运行`us3cli update` 命令来更新工具
+
+针对原因2， 您可以查看后台是否有正在运行的us3cli进程，杀掉老进程即可。
+
 ## Bucket操作如stat、ls、du报错 bucket not found
 
 ### 问题原因
