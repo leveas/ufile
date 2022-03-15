@@ -12,7 +12,7 @@
 
 针对原因1，您可以运行`us3cli update` 命令来更新工具
 
-针对原因2， 您可以查看后台是否有正在运行的us3cli进程，杀掉老进程即可。
+针对原因2， 您可以查看后台是否有正在运行的us3cli进程，执行`kill -9 $旧us3cli进程pid`，关闭旧us3cli进程即可。
 
 ## Bucket操作如stat、ls、du报错 bucket not found
 
