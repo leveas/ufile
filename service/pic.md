@@ -197,16 +197,16 @@ EXIF（EXchangeable Image File Format）是专门为数码相机的照片设定�
 | opacity     | 1-100，缺省为 100（完全不透明）                                                  | 透明度                                                                |
 | ax          | 小于原图宽度，默认为 10                                                         | 锚点 x 坐标                                                            |
 | ay          | 小于原图高度，默认为 10                                                         | 锚点 y 坐标                                                            |
-| text        |                                                                      | base64 URL encode 后的水印文字，支持 UTF-8。                                     |
-| imageurl    |                                                                      | 可访问的图片资源URI，水印图片，必须是可以访问的资源地址，经过 base64 URL encode。       |
-| font        |                                                                      | base64 URL encode 后的字体名称                                                  |
-| fontsize    | 1-100                                                                | 水印文字大小，缺省为10，字体大小。                                                 |
-| rotate    | 0-360                                                                  | 水印文字旋转角度，默认为0，不旋转 。                                               |
+| text        | base64 URL encode 后的水印文字                                           | base64 URL encode 后的水印文字，支持 UTF-8                                     |
+| imageurl    | 资源地址                                                                | 可访问的图片资源URL，水印图片，必须是可以访问的资源地址，经过 base64 URL encode       |
+| fontsize    | 1-100                                                                | 水印文字大小，缺省为10，字体大小                                                  |
+| rotate    | 0-360                                                                   | 水印文字旋转角度，默认为0，不旋转                                                |
 | direction   | 1=RightToLeft，2=LeftToRight                                          | 水印文字方向                                                                  |
 | fill        |                                                                      | RGB 颜色编码表，base64 URL encode 后的RGB格式，可以是颜色名称（比如red）或十六进制（比如\#FF0000），缺省为白色。 |
-| font     |                字体格式编码类型对应表如下                                                      | 默认宋体                 |
+| font     |                字体格式编码类型参考下方编码对应表                                                      | base64 URL encode 后的字体名称，默认宋体                 |
 
-font参数中可选的文字类型以及编码
+font参数中可选的文字类型以及编码对应表
+
 |字体    | 中文名                                                                    | 编码值                       |
 | ------- | -------------------------------------------------------------------- | -------------------------- |
 | SimSun | 宋体   |             5a6L5L2T    /      U2ltU3Vu                       | 
