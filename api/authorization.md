@@ -68,6 +68,7 @@ StringToSign 中包括两类标头元素：
 2. BASE64 使用 standardbase64，不是 URLSafe 的 base64 算法，下同；
 3. 当使用 POST 表单上传时，签名使用的 Content-Type 字段应该是 form 参数中的 Content-Type 字段（即文件本身的 mimetype），而非 HTTP 请求的 Content-Type。
 4. UCloudPublicKey 和 UCloudPrivateKey 对应 [令牌管理](/ufile/guide/token) 中创建的令牌，用户也可以用 UCloud 私有访问密钥进行访问。
+5. Key使用原始字符串即可，无需经过url编码
 
 **计算CanonicalizedUCloudHeaders步骤**
 
@@ -114,7 +115,7 @@ string2sign = "PUT" + "\n"
     + "" + "\n"
     + "x-ucloud-foo:foo" + "\n" + "x-ucloud-bar:bar1,bar2" + "\n"
     + "/demobucket/demokey"
-``` 
+```
 
 即
 
