@@ -72,8 +72,6 @@
         * [下载与配置使用](/ufile/tools/us3clickhouse/prepare)
         * [性能分析](/ufile/tools/us3clickhouse/testdata)
     * 其他工具
-        * [BUCKETMGR 空间管理](/ufile/tools/tools/tools_bcket)
-        * [FILEMGR 文件管理](/ufile/tools/tools/tools_file)
         * [一致性比对工具](/ufile/tools/tools/consistency)
         * [原迁移工具](/ufile/tools/tools/ufile_import)
 * 开发者指南
@@ -107,7 +105,6 @@
     * [欠费处理](/ufile/bill/arrears)
     * [计费案例](/ufile/bill/case)
 * [常见问题](/ufile/faq)
-
 
 
 
