@@ -590,7 +590,7 @@ us3cli sync <本地目录> us3://<桶名字>/<文件Key> [--reduce][--mode cache
       --endpoint <string>      :固定域名，可通过地域和域名页查看
       --exclude <string>       :不包含当前通配符的文件名
   -f, --force                  :是否强制同步，在加入该选项后，同步删除时，不弹出确认信息
-      --no-delete	       :是否默认不删除源端不存在的对象, 且不弹出信息, 在与-f同时使用时，执行--no-delete
+      --no-delete              :是否默认不删除源端不存在的对象, 且不弹出信息, 在与-f同时使用时，执行--no-delete
   -h, --help                   :当前命令使用说明
       --include <string>       :包含当前通配符的文件名
       --metadata <string>      :指定元数据信息，多个元数据以","分隔，如 "key1=value,key2=value2",其他分隔符暂不支持

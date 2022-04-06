@@ -24,6 +24,10 @@
 | 修改元数据     | [modify](#modify)   | 修改存储空间中文件的存储类型、MIMETYPE、MetaData               |
 | 归档数据取回   | [restore](#restore) | 将归档类型的文件激活为可下载状态                             |
 | 数据完整性校验 | [etag](#etag)       | 查看本地文件、标准输出、US3存储空间的文件etag                  |
+| 创建token | [create-token](#create-token)       | 创建一个用于操作US3的token                             |
+| 删除token | [delete-token](#delete-token)       | 删除一个用于操作US3的token                             |
+| 更新token | [update-token](#update-token)       | 更新一个用于操作US3的token                             |
+| 描述token | [describe-token](#describe-token)     | 列取并描述操作US3的token                               |
 | 版本更新       | [update](#update)   | 更新工具版本                                                 |
 | 版本特性       | [version](#version) | 查看工具版本特性                                             |
 
@@ -575,7 +579,7 @@ us3cli cp us3://<桶名字>/<文件Key> us3://<桶名字>/<文件Key> [--recursi
 ### 命令格式
 
 ```
-us3cli sync <本地目录> us3://<桶名字>/<文件Key> [--reduce][--mode cache|local][--ruler modtime|etag][--speedlimit <速度限制>][--retrycount <重试次数>][--exclude <通配符表达式>][--rexclude <正则表达式>][--include <通配符表达式>][--rinclude <正则表达式>][--parallel <请求并发数>][--metadata <Key>=<value1>[,<key2>=<value2>]...][--mimetype <多媒体文件格式>][--storageclass <存储类型>]
+us3cli sync <本地目录> us3://<桶名字>/<文件Key> [--reduce][--mode cache|local][--ruler modtime|etag][--speedlimit <速度限制>][--retrycount <重试次数>][--exclude <通配符表达式>][--rexclude <正则表达式>][--include <通配符表达式>][--rinclude <正则表达式>][--parallel <请求并发数>][--metadata <Key>=<value1>[,<key2>=<value2>]...][--mimetype <多媒体文件格式>][--storageclass <存储类型>][--force]
 ```
 
 ### 参数说明
@@ -585,6 +589,8 @@ us3cli sync <本地目录> us3://<桶名字>/<文件Key> [--reduce][--mode cache
       --config <string>        :当前命令临时指定配置名/配置文件路径
       --endpoint <string>      :固定域名，可通过地域和域名页查看
       --exclude <string>       :不包含当前通配符的文件名
+  -f, --force                  :是否强制同步，在加入该选项后，同步删除时，不弹出确认信息
+      --no-delete	       :是否默认不删除源端不存在的对象, 且不弹出信息, 在与-f同时使用时，执行--no-delete
   -h, --help                   :当前命令使用说明
       --include <string>       :包含当前通配符的文件名
       --metadata <string>      :指定元数据信息，多个元数据以","分隔，如 "key1=value,key2=value2",其他分隔符暂不支持
@@ -966,6 +972,7 @@ us3cli ls [us3://<桶名称>] [--limit <输出限制数>][--restore][--flat][--m
       --projectid <string>   :列出bucket时指定projectid，默认项目可忽略
   -r, --restore              :是否展示数据解冻信息
       --secretkey <string>   :用于访问us3的API私钥或Token私钥
+      --prefix-file-list     :调用专有云的列表服务接口
 ```
 
 注意：
@@ -1228,6 +1235,162 @@ us3://bucket1/test.txt                  AQAAAEpmwm87EANJQDpLTEmxsjR7-R0N
 us3://bucket1/test2.txt                 AQAAAEpmwm87EANJQDpLTEmxsjR7-R0N
 test3.txt    				AQAAAHPuBl-6VRpzVHiBFjSOVhLrcsam
 [-]                                     SmbCbzsQA0lAOktMSbGyNHv5HQ0= 
+```
+## create-token
+
+本命令用于创建Token
+
+### 命令格式
+
+```
+us3cli create-token token-name [--flags]
+```
+
+### 参数说明
+
+```
+      --black-list stringArray   黑名单ip
+  -b, --buckets stringArray      token允许操作的桶
+  -e, --expire int               token过期时间
+  -h, --help                     帮助
+  -o, --operations stringArray   token允许的操作
+      --prefixes stringArray     token允许操作的对象前缀
+  -p, --projectid string         token所属的项目id
+  -r, --region string            token所在的区域
+      --white-list stringArray   白名单ip
+```
+
+##### 使用示例
+
+```
+us3cli create-token test-token --projectid org-xxxxxx
+
+2021-10-13 15:02:37.248 INFO Token created successfully, token-id: ea8e7799-3241-xxxxxxxxxx
+```
+
+## delete-token
+
+本命令用于删除Token
+
+### 命令格式
+
+```
+us3cli delete-token --token-id token-id [--flags]
+```
+
+### 参数说明
+
+```
+  -h, --help               帮助信息
+  -p, --projectid string   token的项目id
+  -r, --region string      token所在的区域
+      --token-id string    想要删除的token的id
+```
+
+##### 使用示例
+
+```
+us3cli delete-token --token-id ea8e7799-3241-xxxxxx --projectid org-xxxxxx --region cn-bj
+
+2021-10-13 15:05:14.449 INFO Token deleted successfully
+```
+## update-token
+
+本命令用于更新Token
+
+### 命令格式
+
+```
+us3cli update-token token-id [--flags]
+```
+
+### 参数说明
+
+```
+      --black-list stringArray   黑名单ip
+  -b, --buckets stringArray      token允许操作的桶
+  -e, --expire int               token过期时间
+  -h, --help                     帮助
+  -n, --name string              token的名字
+  -o, --operations stringArray   token允许的操作
+      --prefixes stringArray     token允许操作的对象前缀
+  -p, --projectid string         token所属的项目id
+  -r, --region string            token所在的区域
+      --white-list stringArray   白名单ip
+```
+
+##### 使用示例
+
+```
+us3cli update-token  c1fd74ad-9c04-4ee2-bb1e-xxxxxxxxx  --region cn-bj --projectid org-xxxxxx
+
+2021-10-13 15:12:02.403 INFO Token updated successfully
+```
+## describe-token
+
+本命令用于列出和描述Token
+
+### 命令格式
+
+```
+us3cli describe-token [--flags]
+```
+
+### 参数说明
+
+```
+  -h, --help               帮助信息
+  -p, --projectid string   token的项目id
+  -r, --region string      token所在的区域
+      --token-id string    想要删除的token的id
+```
+
+##### 使用示例
+
+- 列出某个project，某region下的所有token
+```
+us3cli describe-token  --region cn-bj --projectid org-jhrz4y
+Token Id:
+  2853e6eb-951d-4ba4-b2e9-xxxxxxxxx
+Token Name:
+  sourextoken
+Allowed buckets:
+  [sourcex]
+Allowed operations:
+  [TOKEN_ALLOW_READ TOKEN_ALLOW_WRITE TOKEN_ALLOW_DELETE TOKEN_ALLOW_LIST TOKEN_ALLOW_IOP]
+Allowed prefixes:
+  [*]
+Exipre time:
+  1569742841
+Private key:
+  4xxxxxxxxxxxxxxxxxxxxxxx
+Public key:
+  TOKEN_xxxxxxxxxxxxxxxxxxxxx
+
+....
+
+```
+
+- 描述某个特定的token
+```
+us3cli describe-token  --token-id c1fd74ad-9c04-4ee2-bb1e-xxxxxxxxx  --region cn-bj --projectid org-xxxxx
+Token Id:
+  c1fd74ad-9c04-4ee2-bb1e-xxxxxxxx
+Token Name:
+  test-token
+Allowed buckets:
+  [*]
+Allowed operations:
+  [TOKEN_ALLOW_NONE]
+Allowed prefixes:
+  [*]
+Exipre time:
+  86400
+Private key:
+  dxxxxxxxxxxxxxxxxxxxxxx
+Public key:
+  TOKEN_xxxxxxxxxxxxxxxxxxxx
+
 ```
 
 ## update
