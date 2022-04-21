@@ -111,9 +111,9 @@ us3fs - a single posix file system based on us3
 USAGE
   us3fs [global options] bucket mountpoint
 Version
-  US3FS Version: 1.6.6
-  Commit ID: 541a5aa
-  Build: 2022-01-21:11:51:10
+  US3FS Version: 1.6.7
+  Commit ID: d5569b9
+  Build: 2022-04-21:16:28:09
   Go Version: go1.16.3 linux/amd64
 
 FUSE
@@ -128,28 +128,31 @@ FUSE
   --keep_pagecache              Turn on pagecache, when the file is opened, it will be decided whether to update according to the modification time of the inode, so please pay attention to the attr_timeout and dcache_timeout parameters will have a certain impact on this
 
 OS
-  --dcache_timeout value  How long to cache dentry for us3fs (default: 5m0s)
-  --retry value           Number of times to retry a failed I/O (default: 5)
-  --parallel value        Number of parallel I/O thread (default: 32)
-  --debug                 Set debug level for fuse/winfsp
-  --level value           Set log level: error/warn/info/debug (default: "info")
-  --readahead value       Readahead size. e.g.: 1m/1k/1  (default: "0")
-  --etag value            Check etag for part. value is percent(0~100) (default: 50)
-  --passwd value          specify access file (default: "/etc/us3fs/us3fs.yaml")
-  --enable_md5            Enalbe md5 in http header
-  --uid value             Specify default uid (default: 1000)
-  --gid value             Specify default gid (default: 1000)
-  --disable_check_vdir    disable detection of virtual directories
-  --update                Update us3fs to /bin/us3fs
-  -n                      Doesn't check access when mount us3fs
-  -l                      Enable local cache for small file
-  -p value                Specify local cache location (default: "/tmp/us3fs/")
-  --prefix value          Specify bucket prefix path
-  --gfl                   Enable get_file_list
-  --direct_read           Enable cache bypass read
-  --perf_dump value       How long to output the performance dump (default: 1h0m0s)
-  --skip_ne_dir_lookup    Skip non-essential directory checking, such as files ending in ".log",".png",".jpg", etc.
-  --storage_class value   Storage type, including "STANDARD", "IA" (default: "STANDARD")
+  --dcache_timeout value     How long to cache dentry for us3fs (default: 5m0s)
+  --retry value              Number of times to retry a failed I/O (default: 5)
+  --parallel value           Number of parallel I/O thread (default: 32)
+  --debug                    Set debug level for fuse/winfsp
+  --level value              Set log level: error/warn/info/debug (default: "info")
+  --log_dir value            Set log dir
+  --log_max_age value        Set log max age (default: 72h0m0s)
+  --log_rotation_time value  Set log rotation time (default: 1h0m0s)
+  --readahead value          Readahead size. e.g.: 1m/1k/1  (default: "0")
+  --etag value               Check etag for part. value is percent(0~100) (default: 50)
+  --passwd value             specify access file (default: "/etc/us3fs/us3fs.yaml")
+  --enable_md5               Enalbe md5 in http header
+  --uid value                Specify default uid (default: 502)
+  --gid value                Specify default gid (default: 20)
+  --disable_check_vdir       disable detection of virtual directories
+  --update                   Update us3fs to /bin/us3fs
+  -n                         Doesn't check access when mount us3fs
+  -l                         Enable local cache for small file
+  -p value                   Specify local cache location (default: "/tmp/us3fs/")
+  --prefix value             Specify bucket prefix path
+  --gfl                      Enable get_file_list
+  --direct_read              Enable cache bypass read
+  --perf_dump value          How long to output the performance dump (default: 1h0m0s)
+  --skip_ne_dir_lookup       Skip non-essential directory checking, such as files ending in ".log",".png",".jpg", etc.
+  --storage_class value      Storage type, including "STANDARD", "IA" (default: "STANDARD")
 
 MISC
   --help, -h  show help
