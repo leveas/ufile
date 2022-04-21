@@ -1,5 +1,15 @@
 # 历史版本
 
+## US3FS V1.6.7
+
+### 新特性
+
+* 新增log_dir, log_max_age, log_rotation_time参数指定日志的输出路径
+
+### BUG修复
+
+* 优化高并发读写情况下的内存使用
+
 ## US3FS V1.6.6
 
 ### 新特性
