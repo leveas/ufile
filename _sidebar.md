@@ -92,6 +92,7 @@
     * 增值服务
         * [图片处理服务](/ufile/service/pic)
         * [解压缩服务](/ufile/service/zip)
+        * [文档预览](/ufile/service/doc_preview)
 * [API 列表](/ufile/api_reference)
 * [SDK 列表](/ufile/tools/sdk)
 * 解决方案与最佳实践
