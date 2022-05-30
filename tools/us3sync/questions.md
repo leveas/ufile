@@ -20,3 +20,13 @@ worker节点启动失败，通常为worker节点与master节点网络不通导�
 ### 解决方案
 
 通过ping检查网络连通性，检查worker节点IP地址是否配置正确，确保master和worker节点网络连通。
+
+## 任务有报错，在导出的任务日志中, 报错为"Client.Timeout or context cancellation"
+
+### 问题原因
+
+worker节点试图上传/下载文件，但是由于网络原因或者服务端未响应，导致请求超时，从而引起该错误。
+
+### 解决方案
+
+通过ping或mtr等手段检查endpoint到worker机器的网络联通性，如果网络正常，则可以点击重试按钮，尝试重新传输失败的文件。
