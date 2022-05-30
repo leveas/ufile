@@ -22,6 +22,14 @@
 
 [更新令牌-UpdateUFileToken](https://docs.ucloud.cn/api/ufile-api/update_ufile_token)
 
+[创建解压缩规则-CreateUdsRule](https://docs.ucloud.cn/api/ufile-api/create_uds_rule)
+
+[更新解压缩规则-UpdateUdsRule](https://docs.ucloud.cn/api/ufile-api/update_uds_rule)
+
+[删除解压缩规则-DeleteUdsRule](https://docs.ucloud.cn/api/ufile-api/delete_uds_rule)
+
+[获取解压缩规则-DescribeUdsRule](https://docs.ucloud.cn/api/ufile-api/describe_uds_rule)
+
 ## 数据类 API
 
 [前缀列表查询-PrefixFileList](https://docs.ucloud.cn/api/ufile-api/prefix_file_list)
