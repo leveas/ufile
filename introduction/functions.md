@@ -10,7 +10,7 @@ US3 产品提供了以下对象存储的常用上传、下载功能支持。
 
 普通上传是指用户使用对象存储 API 中的 Put File 方法上传单个 File，可以适用在任何一次 HTTP 请求交互即可完成上传的场景，比如小文件的上传。
 
-### [表单上传（Post File](https://docs.ucloud.cn/ufile/guide/file/put?id=%e8%a1%a8%e5%8d%95%e4%b8%8a%e4%bc%a0)
+### [表单上传（Post File)](https://docs.ucloud.cn/ufile/guide/file/put?id=%e8%a1%a8%e5%8d%95%e4%b8%8a%e4%bc%a0)
 
 表单上传是一种适用于小文件上传的上传方式，是指用户使用对象存储 API 中的 Post File 请求来完成 File 的上传。
 
@@ -38,7 +38,7 @@ US3 产品除了支持标准的对象存储上传、下载功能外，提供了�
 
 对象存储空间支持提供测试域名进行访问，您同时可以选择绑定自定义域名创建 CDN 加速。
 
-### [静态网站托管]（https://docs.ucloud.cn/ufile/guide/static_websit_hosring）
+### [静态网站托管](https://docs.ucloud.cn/ufile/guide/static_websit_hosring)
 
 可以通过控制台对已经绑定的自定义域名的US3存储桶配置静态网站托管策略。
 
