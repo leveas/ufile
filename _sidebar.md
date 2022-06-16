@@ -7,6 +7,11 @@
     * [使用限制](/ufile/introduction/limit)
     * [存储类型](/ufile/introduction/storage_type)
     * [地域和域名](/ufile/introduction/region)
+* [计量计费](/ufile/bill/new)
+    * [产品价格](/ufile/bill/billing)
+    * [计费规则](/ufile/bill/directions)
+    * [欠费处理](/ufile/bill/arrears)
+    * [计费案例](/ufile/bill/case)
 * 快速上手
     * [开通 US3 服务](/ufile/quick/start_service)
     * [开始使用 US3](/ufile/quick/quick_start)
@@ -24,6 +29,10 @@
     * [防盗链](/ufile/guide/referer)
     * [统计报表](/ufile/guide/dashboard)
     * [令牌管理](/ufile/guide/token)
+* 增值服务
+    * [图片处理服务](/ufile/service/pic)
+    * [解压缩服务](/ufile/service/zip)
+    * [文档预览](/ufile/service/doc_preview)
 * [常用工具](/ufile/tools/introduction)
     * US3CLI 命令行工具
         * [工具简介](/ufile/tools/us3cli/introduction)
@@ -89,10 +98,6 @@
     * AWS S3 协议支持
         * [AWS S3 协议支持说明](/ufile/s3/s3_introduction)
         * [AWS S3 协议应用场景](/ufile/s3/s3_application)
-    * 增值服务
-        * [图片处理服务](/ufile/service/pic)
-        * [解压缩服务](/ufile/service/zip)
-        * [文档预览](/ufile/service/doc_preview)
 * [API 列表](/ufile/api_reference)
 * [SDK 列表](/ufile/tools/sdk)
 * 解决方案与最佳实践
@@ -101,11 +106,6 @@
 	* [数据迁移方案](/ufile/solutions/emigration)
     * [数据库备份方案](/ufile/solutions/backup)
     * [数据归档方案](/ufile/solutions/archive)
-* [计量计费](/ufile/bill/new)
-    * [产品价格](/ufile/bill/billing)
-    * [计费规则](/ufile/bill/directions)
-    * [欠费处理](/ufile/bill/arrears)
-    * [计费案例](/ufile/bill/case)
 * [常见问题](/ufile/faq)
 
 

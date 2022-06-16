@@ -6,13 +6,13 @@
 
 ### 下载链接
 
-[bucketmgr-win32](http://tools.ufile.ucloud.com.cn/bucketmgr-win32.zip)
+[bucketmgr-win32](http://tools.cn-bj.ufileos.com/bucketmgr-win32.zip)
 
-[bucketmgr-win64](http://tools.ufile.ucloud.com.cn/bucketmgr-win64.zip)
+[bucketmgr-win64](http://tools.cn-bj.ufileos.com/bucketmgr-win64.zip)
 
-[bucketmgr-linux64](http://tools.ufile.ucloud.com.cn/bucketmgr-linux64.tar.gz)
+[bucketmgr-linux64](http://tools.cn-bj.ufileos.com/bucketmgr-linux64.tar.gz)
 
-[bucketmgr-mac](http://tools.ufile.ucloud.com.cn/bucketmgr-mac.tar.gz)
+[bucketmgr-mac](http://tools.cn-bj.ufileos.com/bucketmgr-mac.tar.gz)
 
 ### 使用说明
 
