@@ -18,11 +18,14 @@
 
 \<TargetPrefix\>\<SourceBucket\>-YYYY-mm-DD-HH-UniqueString.csv  
 命名规则中:  
-TargetPrefix 由用户指定，表示存储访问日志记录的名称前缀，可以为空。  
-YYYY-mm-DD-HH- 分别是该日志被创建时的阿拉伯数字的年、月、日、小时。  
-UniqueString 为系统生成的 8 位字符串，用于唯一标识该 Log 文件。  
+|字段|说明|
+|----|----|
+|TargetPrefix|由用户指定，表示存储访问日志记录的名称前缀，可以为空|
+|YYYY-mm-DD-HH-|分别是该日志被创建时的阿拉伯数字的年、月、日、小时|
+|UniqueString|为系统生成的 8 位字符串，用于唯一标识该 Log 文件|
+
 存储空间访问日志的名称例子如下：  
-ufile-log/SourceBucket-2018-10-22-08-00000000
+ufile-log/SourceBucket-2018-10-22-08-00000000.csv
 
 ## 日志格式和示例
 
@@ -52,7 +55,7 @@ ufile-log/SourceBucket-2018-10-22-08-00000000
 |CreatedTime|1654653681|文件创建时间,非GET请求时此值为0|
 
 ## 日志示例
-```
+``` bash
 Action,Bucket,Key,Host,UserAgent,RemoteIP,Referer,HttpStatus,TimeStamp,CostTime,ErrCode,ErrMsg,IsUCDN,FileSize,StorageClass,CreatedTime
 LIST_OBJECTS,example-bucket,,example-bucket.cn-bj.ufileos.com,Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML like Gecko) Chrome/102.0.5005.61 Safari/537.36,10.75.220.2,https://console.ucloud.cn/,200,1654653684,13,0,success,false,0,UNKNOWN,0
 OPTIONS,example-bucket,,example-bucket.cn-bj.ufileos.com,Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML like Gecko) Chrome/102.0.5005.61 Safari/537.36,10.75.220.2,https://console.ucloud.cn/,200,1654653684,0,0,success,false,0,UNKNOWN,0
