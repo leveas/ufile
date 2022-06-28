@@ -10,7 +10,6 @@
 * 简单下载的 API 接口详细信息请参见 [GetFile](https://docs.ucloud.cn/api/ufile-api/get_file)。
 * Object 的 URL 生成规则请参考 US3 的访问。
 * 如果需要使用自定义域名来访问 Object，请参考自定义域名访问 US3。
-* 私有 Bucket 中 Object 的下载链接必须指定过期时间。
 
 ## 断点续传下载
 
