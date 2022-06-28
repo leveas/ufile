@@ -8,7 +8,9 @@
 简单下载是通过 US3 API 的 GetObject 接口，下载已经上传的文件（Object），Object 下载是使用 HTTP 的 GET 请求来完成的。
 
 * 简单下载的 API 接口详细信息请参见 [GetFile](https://docs.ucloud.cn/api/ufile-api/get_file)。
+
 * Object 的 URL 生成规则请参考 US3 的访问。
+
 * 如果需要使用自定义域名来访问 Object，请参考自定义域名访问 US3。
 
 ## 断点续传下载
