@@ -2,40 +2,39 @@
 
 图片处理服务是 UCloud 对外提供的海量、安全、低成本高可靠的图片处理服务。用户将原始图片上传保存在对象存储空间中，用户可以在任何时间、任何地点、任何设备上对图片进行处理。
 
-## 注意事项
+
+## 使用限制
 
 - 图片处理服务仅在下载时触发；
-- 只有北京、上海地域支持像素10000*10000的图片处理请求；
+- 图片处理不支持的地域，泰国、圣保罗、孟买、华盛顿、日本，雅加达，法兰克福，若该不支持地域有图片处理需求，请联系技术支持；
+- 只有北京、上海、香港地域支持像素10000*10000的图片处理请求；
 - 图片处理不支持range参数，加range参数会返回整个图片；
-- 华北二暂不支持外网水印，如需使用，可将图片先上传至US3的存储桶，图片水印的imageurl时候使用内网域名url。
+- 华北二、伦敦、洛杉矶、尼日利亚暂不支持外网水印，如需使用，可将图片先上传至US3的存储桶，图片水印的imageurl可以使用内网域名url。
 
 
 ## 功能支持
 
-图片处理服务功能列表及地域支持情况：
+图片处理服务功能列表：
 
-| 功能    | 支持地域        |
-| ------ | --------- |
-| 1. [基本图片信息获取](https://cms-docs.ucloudadmin.com/ufile/service/pic?id=基础图片信息获取) | ALL | 
-| 2. [EXIF 信息获取](https://docs.ucloud.cn/ufile/service/pic?id=exif信息获取)  | ALL | 
-| 3. [图片缩放](https://docs.ucloud.cn/ufile/service/pic?id=图片缩放) | ALL | 
-| 4. [图片裁剪](https://docs.ucloud.cn/ufile/service/pic?id=图片裁剪)  | ALL | 
-| 5. [索引切割](https://docs.ucloud.cn/ufile/service/pic?id=索引切割) | 中国大陆、台北、新加坡、迪拜、伦敦  | 
-| 6. [内切圆](https://docs.ucloud.cn/ufile/service/pic?id=内切圆)  |中国大陆、台北、新加坡、迪拜、伦敦  | 
-| 7. [圆角矩形](https://docs.ucloud.cn/ufile/service/pic?id=圆角矩形)  | 中国大陆、台北、新加坡、迪拜、伦敦 | 
-| 8. [图片旋转](https://docs.ucloud.cn/ufile/service/pic?id=图片旋转)  | ALL | 
-| 9. [图片自适应方向](https://docs.ucloud.cn/ufile/service/pic?id=图片自适应方向)  | 中国大陆、台北、新加坡、迪拜、伦敦   | 
-|10. [图片亮度](https://docs.ucloud.cn/ufile/service/pic?id=图片亮度)  | 中国大陆、台北、新加坡、迪拜、伦敦  | 
-| 11. [图片对比度](https://docs.ucloud.cn/ufile/service/pic?id=图片对比度)  | 中国大陆、台北、新加坡、迪拜、伦敦   | 
-| 12. [图片锐化](https://docs.ucloud.cn/ufile/service/pic?id=图片锐化) | 中国大陆、台北、新加坡、迪拜、伦敦   | 
-| 13. [图片模糊](https://docs.ucloud.cn/ufile/service/pic?id=图片模糊)  | 中国大陆、台北、新加坡、迪拜、伦敦  | 
-| 14. [获取图片主色调](https://docs.ucloud.cn/ufile/service/pic?id=获取图片主色调)  | 中国大陆、台北、新加坡、迪拜、伦敦   | 
-| 15. [水印](https://docs.ucloud.cn/ufile/service/pic?id=水印)  | ALL | 
-| 16. [图片格式转换](https://docs.ucloud.cn/ufile/service/pic?id=图片格式转换)  | ALL | 
-| 17. [图片渐进显示](https://docs.ucloud.cn/ufile/service/pic?id=图片渐进显示) | 中国大陆、台北、新加坡、迪拜、伦敦   | 
-| 18. [管道顺序调用多种图片处理功能](https://docs.ucloud.cn/ufile/service/pic?id=管道顺序调用多种图片处理功能) | ALL | 
+1. [基本图片信息获取](https://cms-docs.ucloudadmin.com/ufile/service/pic?id=基础图片信息获取)
+2. [EXIF 信息获取](https://docs.ucloud.cn/ufile/service/pic?id=exif信息获取)
+3. [图片缩放](https://docs.ucloud.cn/ufile/service/pic?id=图片缩放)
+4. [图片裁剪](https://docs.ucloud.cn/ufile/service/pic?id=图片裁剪)
+5. [索引切割](https://docs.ucloud.cn/ufile/service/pic?id=索引切割)
+6. [内切圆](https://docs.ucloud.cn/ufile/service/pic?id=内切圆)
+7. [圆角矩形](https://docs.ucloud.cn/ufile/service/pic?id=圆角矩形)
+8. [图片旋转](https://docs.ucloud.cn/ufile/service/pic?id=图片旋转)
+9. [图片自适应方向](https://docs.ucloud.cn/ufile/service/pic?id=图片自适应方向)
+10. [图片亮度](https://docs.ucloud.cn/ufile/service/pic?id=图片亮度)
+11. [图片对比度](https://docs.ucloud.cn/ufile/service/pic?id=图片对比度)
+12. [图片锐化](https://docs.ucloud.cn/ufile/service/pic?id=图片锐化)
+13. [图片模糊](https://docs.ucloud.cn/ufile/service/pic?id=图片模糊)
+14. [获取图片主色调](https://docs.ucloud.cn/ufile/service/pic?id=获取图片主色调)
+15. [水印](https://docs.ucloud.cn/ufile/service/pic?id=水印)
+16. [图片格式转换](https://docs.ucloud.cn/ufile/service/pic?id=图片格式转换)
+17. [图片渐进显示](https://docs.ucloud.cn/ufile/service/pic?id=图片渐进显示)
+18. [管道顺序调用多种图片处理功能](https://docs.ucloud.cn/ufile/service/pic?id=管道顺序调用多种图片处理功能)
 
-若其他地域有图片处理需求，请联系技术支持。
 
 ## 基本图片信息获取
 

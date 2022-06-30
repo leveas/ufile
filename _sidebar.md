@@ -94,7 +94,8 @@
     * 鉴权方法说明
         * [API 签名算法](/ufile/api/authorization)
         * [签名工具](/ufile/api/authorization-tool)
-	* [上传策略说明](/ufile/putpolicy)
+	    * [在URL中包含签名](/ufile/api/authorization-url)
+    * [上传策略说明](/ufile/putpolicy)
     * AWS S3 协议支持
         * [AWS S3 协议支持说明](/ufile/s3/s3_introduction)
         * [AWS S3 协议应用场景](/ufile/s3/s3_application)
