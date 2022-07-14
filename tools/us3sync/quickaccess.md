@@ -83,7 +83,7 @@
 ![](https://ufile-release.cn-bj.ufileos.com/us3sync/doc/detail_2.png)
 
 ### 错误日志导出
-![](https://ufile-release.cn-bj.ufileos.com/us3sync/doc/error_log.png)
+![](https://ufile-release.cn-bj.ufileos.com/us3sync/doc/error_log_2.png)
 
 ```
 - 任务操作：
