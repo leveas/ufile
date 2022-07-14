@@ -1,23 +1,63 @@
 # 快速上手
 
-- [视频教学](#视频教学)
-- [界面说明](#界面说明)
+- [快速上手](#快速上手)
+  - [视频教学](#视频教学)
+  - [界面说明](#界面说明)
     - [登录界面说明](#登录界面说明)
     - [任务管理界面说明](#任务管理界面说明)
     - [创建任务界面说明](#创建任务界面说明)
+      - [可以在此处获取jobid来构建Fetch请求](#可以在此处获取jobid来构建fetch请求)
     - [创建迁移源界面说明](#创建迁移源界面说明)
-    - [节点管理界面说明](#节点管理界面说明)
     - [创建节点界面说明](#创建节点界面说明)
-- [使用说明](#使用说明)
+  - [使用说明](#使用说明)
     - [添加Endpoint](#添加endpoint)
     - [创建任务](#创建任务)
     - [启动迁移](#启动迁移)
     - [暂停迁移](#暂停迁移)
     - [重试](#重试)
     - [导出失败文件列表](#导出失败文件列表)
-- [缓存说明](#缓存说明)
-- [迁移类型说明](#迁移类型说明)
-    - [s3](#s3)
+  - [缓存说明](#缓存说明)
+  - [迁移类型说明](#迁移类型说明)
+    - [S3](#s3)
+    - [local](#local)
+    - [http](#http)
+
+  - [使用说明](#使用说明)
+    - [添加Endpoint](#添加endpoint)
+    - [创建任务](#创建任务)
+    - [启动迁移](#启动迁移)
+    - [暂停迁移](#暂停迁移)
+    - [重试](#重试)
+    - [导出失败文件列表](#导出失败文件列表)
+  - [缓存说明](#缓存说明)
+  - [迁移类型说明](#迁移类型说明)
+    - [S3](#s3)
+    - [local](#local)
+    - [http](#http)
+
+  - [使用说明](#使用说明)
+    - [添加Endpoint](#添加endpoint)
+    - [创建任务](#创建任务)
+    - [启动迁移](#启动迁移)
+    - [暂停迁移](#暂停迁移)
+    - [重试](#重试)
+    - [导出失败文件列表](#导出失败文件列表)
+  - [缓存说明](#缓存说明)
+  - [迁移类型说明](#迁移类型说明)
+    - [S3](#s3)
+    - [local](#local)
+    - [http](#http)
+
+  - [使用说明](#使用说明)
+    - [添加Endpoint](#添加endpoint)
+    - [创建任务](#创建任务)
+    - [启动迁移](#启动迁移)
+    - [暂停迁移](#暂停迁移)
+    - [重试](#重试)
+    - [导出失败文件列表](#导出失败文件列表)
+  - [缓存说明](#缓存说明)
+  - [迁移类型说明](#迁移类型说明)
+    - [S3](#s3)
     - [local](#local)
     - [http](#http)
 
@@ -31,16 +71,15 @@
 
 ## 界面说明
 
-服务启动后，通过浏览器打开页面https://<web服务监听IP>:<web服务监听端口>，即可访问US3SYNC界面，在界面上进行数据的迁移操作。
+服务启动后，通过浏览器打开页面<https://<web服务监听IP>:<web服务监听端口>，即可访问US3SYNC>界面，在界面上进行数据的迁移操作。
 
 ### 登录界面说明
 
-![](https://ufile-release.cn-bj.ufileos.com/us3sync/doc/login.png)
+![](https://ufile-release.cn-bj.ufileos.com/us3sync/doc/login_2.png?iopcmd=thumbnail&type=1&scale=50)
 
 ### 任务管理界面说明
 
-![](https://ufile-release.cn-bj.ufileos.com/us3sync/doc/job-detail.png)
-
+![](https://ufile-release.cn-bj.ufileos.com/us3sync/doc/detail_2.png)
 
 ```
 - 任务操作：
@@ -63,35 +102,22 @@
 
 ### 创建任务界面说明
 
-![](https://ufile-release.cn-bj.ufileos.com/us3sync/doc/create-job.png)
-
-### 创建迁移源界面说明
-
-![](https://ufile-release.cn-bj.ufileos.com/us3sync/doc/create-ep.png)
-
-### 节点管理界面说明
-
-![](https://ufile-release.cn-bj.ufileos.com/us3sync/doc/node-detail.png)
-
-### 创建节点界面说明
-
-![](https://ufile-release.cn-bj.ufileos.com/us3sync/doc/create-node.png)
-
-### 1.5.0版本控制台新增功能说明：
-
-#### 创建任务时可以选择任务类型，以及是否启用自动发现prefix功能。
-
-![](https://ufile-release.cn-bj.ufileos.com/us3sync/doc/new-create-job.png)
+![](https://ufile-release.cn-bj.ufileos.com/us3sync/doc/create_job_2.png)
 
 #### 可以在此处获取jobid来构建Fetch请求
 
 ![](https://ufile-release.cn-bj.ufileos.com/us3sync/doc/jobid.png)
 
-#### 可以在创建Endpoint时指定是否使用Https以及prefix-file-list接口列取
+### 创建迁移源界面说明
 
-![](https://ufile-release.cn-bj.ufileos.com/us3sync/doc/endpoint.png)
+![](https://ufile-release.cn-bj.ufileos.com/us3sync/doc/create_endpoint_2.png)
 
-### 
+
+### 创建节点界面说明
+
+![](https://ufile-release.cn-bj.ufileos.com/us3sync/doc/worker_create.png)
+
+###
 
 ## 使用说明
 
@@ -141,6 +167,13 @@
 2. 根据最近时间过滤，用户指定迁移最近几个小时的文件。如果配置定期任务执行，则每次定期任务启动，都会根据当时时间进行计算。
 ```
 
+正则匹配说明：
+
+```
+1. 若配置此项，则拉取源端列表时会匹配正则表示式，只有命中的文件才可能被迁移。
+2. 此表达式不会匹配源端前缀，因此和前缀配合使用可以匹配到某前缀下命中该正则表达式的文件。
+```
+
 ### 启动迁移
 
 参考 [任务管理界面说明](#任务管理界面说明)，点击开启迁移按钮。
@@ -179,7 +212,7 @@ US3SYNC 使用 pika 提供缓存服务。主要缓存以下信息：
 
 ### S3
 
-AWS S3源需要额外提供待迁移空间的 region 字段，参考：https://docs.aws.amazon.com/zh_cn/general/latest/gr/s3.html 。
+AWS S3源需要额外提供待迁移空间的 region 字段，参考：<https://docs.aws.amazon.com/zh_cn/general/latest/gr/s3.html> 。
 
 第三方实现S3协议参考对应厂商S3文档说明。
 
