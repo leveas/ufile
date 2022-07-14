@@ -5,6 +5,7 @@
   - [界面说明](#界面说明)
     - [登录界面说明](#登录界面说明)
     - [任务管理界面说明](#任务管理界面说明)
+    - [错误日志导出](#错误日志导出)
     - [创建任务界面说明](#创建任务界面说明)
       - [可以在此处获取jobid来构建Fetch请求](#可以在此处获取jobid来构建fetch请求)
     - [创建迁移源界面说明](#创建迁移源界面说明)
@@ -75,11 +76,14 @@
 
 ### 登录界面说明
 
-![](https://ufile-release.cn-bj.ufileos.com/us3sync/doc/login_2.png?iopcmd=thumbnail&type=1&scale=50)
+![](https://ufile-release.cn-bj.ufileos.com/us3sync/doc/login_2.png)
 
 ### 任务管理界面说明
 
 ![](https://ufile-release.cn-bj.ufileos.com/us3sync/doc/detail_2.png)
+
+### 错误日志导出
+![](https://ufile-release.cn-bj.ufileos.com/us3sync/doc/error_log.png)
 
 ```
 - 任务操作：
@@ -98,6 +102,10 @@
 迁移成功:   已经迁移成功的文件个数
 迁移失败:   已经迁移失败的文件个数
 =================================
+
+- 错误日志导出：
+如果您的迁移任务出错，请您在任务接受后点击图上按钮将错误日志导出，日志将会被us3sync上传到us3上，并在界面上提供给您一个可以下载的url。   
+您可以在节点所在机器上使用wget下载，并参考: https://cms-docs.ucloudadmin.com/ufile/tools/us3sync/questions 进行排查。
 ```
 
 ### 创建任务界面说明
@@ -115,7 +123,7 @@
 
 ### 创建节点界面说明
 
-![](https://ufile-release.cn-bj.ufileos.com/us3sync/doc/worker_create.png)
+![](https://ufile-release.cn-bj.ufileos.com/us3sync/doc/worker_create_2.png)
 
 ###
 
