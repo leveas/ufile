@@ -101,8 +101,9 @@ Content-Length: 159
 
 {
 	"Url": "http://xxx.xxx.xxx/xxx/movie.mp4",
+	"Bucket": "example_bucket",
 	"Key":"movie.mp4",
-	"JobId": "xxxxxxxxxxxxxxxxxxxx"
+	"JobId": "xxxxxxxxxxxxxxxxxxxx",
 	"SuccessCallbackUrl":"http://xxx.xxx.xxx/xxx",
 	"FailureCallbackUrl":"http://xxx.xxx.xxx/xxx"
 }
