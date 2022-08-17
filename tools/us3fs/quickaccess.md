@@ -37,7 +37,7 @@ us3fs [global options] <bucket> <mountpoint>
 umount <mountpoint>
 ```
 
-> *windows 对cmd执行`Ctrl+C`* 
+> *windows 对cmd执行`Ctrl+C`*
 
 -----
 
@@ -111,9 +111,9 @@ us3fs - a single posix file system based on us3
 USAGE
   us3fs [global options] bucket mountpoint
 Version
-  US3FS Version: 1.6.7
-  Commit ID: d5569b9
-  Build: 2022-04-21:16:28:09
+  US3FS Version: v1.6.8
+  Commit ID: c87ec9c
+  Build: 2022-08-17:11:01:05
   Go Version: go1.16.3 linux/amd64
 
 FUSE
@@ -136,12 +136,13 @@ OS
   --log_dir value            Set log dir
   --log_max_age value        Set log max age (default: 72h0m0s)
   --log_rotation_time value  Set log rotation time (default: 1h0m0s)
+  --enable_load_dentries     enable auto init dentries in memory
   --readahead value          Readahead size. e.g.: 1m/1k/1  (default: "0")
   --etag value               Check etag for part. value is percent(0~100) (default: 50)
   --passwd value             specify access file (default: "/etc/us3fs/us3fs.yaml")
   --enable_md5               Enalbe md5 in http header
-  --uid value                Specify default uid (default: 502)
-  --gid value                Specify default gid (default: 20)
+  --uid value                Specify default uid (default: 0)
+  --gid value                Specify default gid (default: 0)
   --disable_check_vdir       disable detection of virtual directories
   --update                   Update us3fs to /bin/us3fs
   -n                         Doesn't check access when mount us3fs
@@ -166,9 +167,9 @@ us3fs - a single posix file system based on us3
 USAGE
   us3fs [global options] bucket mountpoint
 Version
-  US3FS Version: 1.6.6
-  Commit ID: 541a5aa
-  Build: 2022-01-21:11:51:10
+  US3FS Version: v1.6.8
+  Commit ID: c87ec9c
+  Build: 2022-08-17:11:01:05
   Go Version: go1.16.3 linux/amd64
 
 WinFSP
@@ -304,8 +305,8 @@ MISC
 real    0m5.964s
 user    0m0.033s
 sys     0m0.232s
-[root@10-9-120-211 ~]# 
-[root@10-9-120-211 ~]# 
+[root@10-9-120-211 ~]#
+[root@10-9-120-211 ~]#
 [root@10-9-120-211 ~]# time ls -la <your_dir> | wc -l
 10003
 
@@ -385,7 +386,7 @@ sys     0m0.133s
 * `critical`：写入文件时启用本地etag校验，相比未开启会提高约50%的cpu占用。
 * `readahead`：预读窗口大小，由于fuse自身有读写窗口的限制，一定的预读大小对读取性能有显著提升。建议设置在16m~32m，但会增加内存消耗，可以适当缩小预读窗口。
 * `keep_pagecache`: 尽可能缓存数据内容在vfs pagecache中，直到文件的修改时间和大小发生变化，才无效掉pagecache中的历史数据。
-* `wb`: 该参数会使得写入的IO会尽量在pagecache中合并，然后以大IO(默认128K)发送到us3fs。 
+* `wb`: 该参数会使得写入的IO会尽量在pagecache中合并，然后以大IO(默认128K)发送到us3fs。
 
 ### 小文件场景
 
@@ -418,7 +419,7 @@ User=<user>
 Group=<group>
 Restart=always
 RestartSec=10
-ExecStart=/bin/us3fs --passwd=/etc/us3fs/us3fs.conf --keep_pagecache <your_bucket> <mountpoint> 
+ExecStart=/bin/us3fs --passwd=/etc/us3fs/us3fs.conf --keep_pagecache <your_bucket> <mountpoint>
 ExecStop=/bin/umount <monutpoint>
 [Install]
 WantedBy=multi-user.target
