@@ -210,6 +210,61 @@ MISC
 
 > *Linux和Windows的参数区别主要体现在`FUSE`和`WinFsp`*
 
+## 配置文件对应终端参数
+- 部分终端挂载参数支持配置在配置文件，配置文件的参数和终端参数的对应关系如下:
+
+| 终端挂载参数名称       | 配置文件参数名称             |       配置文件样例        |
+| ------------------- | -------------------------- | ----------------------  |
+| gfl                 | get_file_list           |   get_file_list: true      |
+| keep_pagecache      | keep_pagecache          |   keep_pagecache: true     |
+| n                   | no_check                |   no_check: true           |
+| disable_check_vdir  | disable_check_vdir      |   disable_check_vdir: true |
+| async_dio           | async_dio               |   async_dio: true          |
+| skip_ne_dir_lookup  | skip_ne_dir_look        |   skip_ne_dir_look: true   |
+| l                   | enable_local            |   enable_local: true       |
+| wb                  | writeback               |   writeback: true          |
+| direct_read         | direct_read             |   direct_read: true        |
+| enable_md5          | enable_md5              |   enable_md5: true         |
+| debug               | debug                   |   debug: true              |
+| -o allow_other      | allow_other             |   allow_other: true        |
+| enable_load_dentries| enable_load_dentries    |   enable_load_dentries:true|
+| disable_async_read  | disable_async_read      |   disable_async_read:true  |
+| retry               | retry                   |   retry: 66                |
+| parallel            | parallel                |   parallel: 77             |
+| congestion_threshold| congestion_threshold    |   congestion_threshold: 88 |
+| max_background      | max_background          |   max_background: 99       |
+| uid                 | uid                     |   uid=100                  |
+| gid                 | gid                     |   gid :100                 |
+| etag                | etag                    |   etag :100                |
+| dcache_timeout      | dcache_timeout          |   dcache_timeout: 2h       |
+| entry_timeout       | entry_timeout           |   entry_timeout: 3h        |
+| attr_timeout        | attr_timeout            |   attr_timeout: 4h         |
+| perf_dump           | perf_dump               |   attr_timeout: 5h         |
+| log_max_age         | log_max_age             |   log_max_age: 6h          |
+| log_dir             | log_dir                 |   log_dir:/a/b/c           |
+| prefix              | prefix                  |   prefix: /a/b/c           |
+| level               | level                   |   level: debug             |
+| storage_class       | storage_class           |   storage_class: STANDARD  |
+| p                   | local_path              |   local_path:/a/b/c        |
+| readahead           | readahead               |   readahead: 8M            |
+|            |                |               |
+- 挂载参数配置在配置文件样例
+编辑/etc/us3fs/us3fs.yaml（如果没有该目录需要自行创建）依据具体需求将挂载参数写在配置文件，简化挂载命令
+
+```
+access_key: ************************************
+secret_key: ************************************
+endpoint: ufile.cn-north-02.ucloud.cn
+hosts: []
+get_file_list: true
+no_check: true 
+writeback: true
+retry: 66
+dcache_timeout: 2h
+entry_timeout: 3h
+attr_timeout: 4h
+etag :100
+```
 ## 选项列表
 
 #### WinFsp

@@ -32,7 +32,6 @@ curl -o us3fs https://ufile-release.cn-bj.ufileos.com/us3fs/us3fs
 编辑/etc/us3fs/us3fs.yaml并增加如下信息（如果没有该目录需要自行创建）：
 
 ```
-bucket: testzwb
 access_key: ************************************
 secret_key: ************************************
 endpoint: ufile.cn-north-02.ucloud.cn
@@ -42,8 +41,8 @@ hosts: []
 *冒号后有单个空格*
 
 * **bucket**: 存储空间名，需要和挂载的存储空间名一致
-* **access_key**: 公钥，支持token秘钥和api秘钥两种模式
-* **secret_key**: 私钥，支持token秘钥和api秘钥两种模式
+* **access_key**: 公钥，支持token秘钥和api秘钥两种模式，要有覆盖上传权限
+* **secret_key**: 私钥，支持token秘钥和api秘钥两种模式，要有覆盖上传权限
 * **endpoint**: 访问域名，详见[地域和域名](https://docs.ucloud.cn/ufile/introduction/region)。填写域名为地域域名，并非具体的存储空间域名。
 * **hosts**: 指定访问点IP列表，不会走DNS解析逻辑获取US3接入层IP。如果指定个数小于3个不会生效。 如: `hosts: [10.9.254.190, 117.50.123.23, 117.50.123.29, 117.50.123.8]`
 
