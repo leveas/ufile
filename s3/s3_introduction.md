@@ -99,23 +99,24 @@ S3 的 AccessKeyID（或称AccessKey）和 SecretAccessKey（或称SecretKey）�
 | **编号** | **地域** | **外网Endpoint**            | **内网Endpoint**                     |
 | :------- | :------- | :-------------------------- | :----------------------------------- |
 | 1        | 华北一   | s3-cn-bj.ufileos.com        | internal.s3-cn-bj.ufileos.com        |
-| 2        | 上海     | s3-cn-sh2.ufileos.com       | internal.s3-cn-sh2.ufileos.com       |
-| 3        | 广州     | s3-cn-gd.ufileos.com        | internal.s3-cn-gd.ufileos.com        |
-| 4        | 香港     | s3-hk.ufileos.com           | internal.s3-hk.ufileos.com           |
-| 5        | 洛杉矶   | s3-us-ca.ufileos.com        | internal.s3-us-ca.ufileos.com        |
-| 6        | 新加坡   | s3-sg.ufileos.com           | internal.s3-sg.ufileos.com           |
-| 7        | 雅加达   | s3-idn-jakarta.ufileos.com  | internal.s3-idn-jakarta.ufileos.com  |
-| 8        | 台北     | s3-tw-tp.ufileos.com        | internal.s3-tw-tp.ufileos.com        |
-| 9        | 拉各斯   | s3-afr-nigeria.ufileos.com  | internal.s3-afr-nigeria.ufileos.com  |
-| 10       | 圣保罗   | s3-bra-saopaulo.ufileos.com | internal.s3-bra-saopaulo.ufileos.com |
-| 11       | 迪拜     | s3-uae-dubai.ufileos.com    | internal.s3-uae-dubai.ufileos.com    |
-| 12       | 法兰克福 | s3-ge-fra.ufileos.com       | internal.s3-ge-fra.ufileos.com       |
-| 13       | 胡志明市 | s3-vn-sng.ufileos.com       | internal.s3-vn-sng.ufileos.com       |
-| 14       | 华盛顿   | s3-us-ws.ufileos.com        | internal.s3-us-ws.ufileos.com        |
-| 15       | 孟买     | s3-ind-mumbai.ufileos.com   | internal.s3-ind-mumbai.ufileos.com   |
-| 16       | 首尔     | s3-kr-seoul.ufileos.com     | internal.s3-kr-seoul.ufileos.com     |
-| 17       | 东京     | s3-jpn-tky.ufileos.com      | internal.s3-jpn-tky.ufileos.com      |
-| 18       | 曼谷     | s3-th-bkk.ufileos.com       | internal.s3-th-bkk.ufileos.com       |
+| 2        | 华北二   | s3-cn-wlcb.ufileos.com        | internal.s3-cn-wlcb.ufileos.com        |
+| 3        | 上海     | s3-cn-sh2.ufileos.com       | internal.s3-cn-sh2.ufileos.com       |
+| 4        | 广州     | s3-cn-gd.ufileos.com        | internal.s3-cn-gd.ufileos.com        |
+| 5        | 香港     | s3-hk.ufileos.com           | internal.s3-hk.ufileos.com           |
+| 6        | 洛杉矶   | s3-us-ca.ufileos.com        | internal.s3-us-ca.ufileos.com        |
+| 7        | 新加坡   | s3-sg.ufileos.com           | internal.s3-sg.ufileos.com           |
+| 8        | 雅加达   | s3-idn-jakarta.ufileos.com  | internal.s3-idn-jakarta.ufileos.com  |
+| 9        | 台北     | s3-tw-tp.ufileos.com        | internal.s3-tw-tp.ufileos.com        |
+| 10        | 拉各斯   | s3-afr-nigeria.ufileos.com  | internal.s3-afr-nigeria.ufileos.com  |
+| 11       | 圣保罗   | s3-bra-saopaulo.ufileos.com | internal.s3-bra-saopaulo.ufileos.com |
+| 12       | 迪拜     | s3-uae-dubai.ufileos.com    | internal.s3-uae-dubai.ufileos.com    |
+| 13       | 法兰克福 | s3-ge-fra.ufileos.com       | internal.s3-ge-fra.ufileos.com       |
+| 14       | 胡志明市 | s3-vn-sng.ufileos.com       | internal.s3-vn-sng.ufileos.com       |
+| 15       | 华盛顿   | s3-us-ws.ufileos.com        | internal.s3-us-ws.ufileos.com        |
+| 16       | 孟买     | s3-ind-mumbai.ufileos.com   | internal.s3-ind-mumbai.ufileos.com   |
+| 17       | 首尔     | s3-kr-seoul.ufileos.com     | internal.s3-kr-seoul.ufileos.com     |
+| 18       | 东京     | s3-jpn-tky.ufileos.com      | internal.s3-jpn-tky.ufileos.com      |
+| 19       | 曼谷     | s3-th-bkk.ufileos.com       | internal.s3-th-bkk.ufileos.com       |
 
 注意: *目前华北一，香港，胡志明，首尔，圣保罗，洛杉矶，华盛顿地域已经支持https协议，其他地域可支持路径风格https，后续支持虚拟主机风格https (所有地域内网不支持https)*
 
