@@ -24,6 +24,6 @@ US3 提供了各种主流语言的 SDK，用于对象存储相关功能的调用
 
 [Android SDK](https://github.com/ufilesdk-dev/ufile-androidsdk)
 
-[C++ SDK](https://github.com/ufilesdk-dev/ufile-cppsdk)
+[C++ SDK](https://ucloud-us3.github.io/cpp-sdk/%E6%A6%82%E8%BF%B0.html)
 
 备注：使用 JS SDK 需要指派跨域配置的工单至技术支持，请参考 [常见问题](/ufile/faq)。
