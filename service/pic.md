@@ -77,7 +77,7 @@ EXIF（EXchangeable Image File Format）是专门为数码相机的照片设定�
 | type    | 14           | 等比缩放，目标会小于等于 widthXheight                                                |
 | type    | 15           | 等比缩放，目标会等于 widthXheight，不足的边，补 color 颜色                                    |
 | color   | 十六进制或颜色名 red 等 |                                                                         |
-| scale   | 最大 10000      | 缩放百分比                                                                   |
+| scale   | 最大 1000      | 缩放百分比                                                                   |
 | gifmode |              | 该参数只对 gif 图片有效。若不传，则该参数默认为 1                                               |
 | gifmode | 1            | 返回连续的图像帧，如果不能处理全部的图像帧则只返回部分，同 3                                          |
 | gifmode | 2            | 返回第一帧静态图片，图像格式仍为 gif                                                     |
