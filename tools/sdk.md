@@ -18,7 +18,7 @@ US3 提供了各种主流语言的 SDK，用于对象存储相关功能的调用
 
 [NodeJS SDK](https://github.com/ufilesdk-dev/ufile-nodejssdk)
 
-[Java SDK](https://github.com/ucloud/ufile-sdk-java)
+[Java SDK](https://ucloud-us3.github.io/java-sdk/%E6%A6%82%E8%BF%B0.html)
 
 [iOS SDK](https://github.com/ucloud/ufile-sdk-ios)
 
