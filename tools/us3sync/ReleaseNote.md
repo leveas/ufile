@@ -1,3 +1,7 @@
+# v1.9.1
+
+1. 修复了fetch任务回调请求没有带Content-Type: application/json的错误
+
 # v1.9.0
 
 1. 针对body长度不正确的http请求会进行重试
