@@ -192,7 +192,7 @@ EXIF（EXchangeable Image File Format）是专门为数码相机的照片设定�
 | ax          | 小于原图宽度，默认为 10                                                         | 锚点 x 坐标                                                            |
 | ay          | 小于原图高度，默认为 10                                                         | 锚点 y 坐标                                                            |
 | text        | base64 URL encode 后的水印文字                                           | base64 URL encode 后的水印文字，支持 UTF-8                                     |
-| imageurl    | 资源地址                                                                | 可访问的图片资源URL，水印图片，必须是可以访问的资源地址，经过 base64 URL encode       |
+| imageurl    | 资源地址                                                                | 可访问的图片资源URL，水印图片，必须是可以访问的资源地址，经过 base64 URL encode,后续会不支持外网水印URL，并且仅支持对象存储公开bucket内网域名水印的URL       |
 | fontsize    | 1-100                                                                | 水印文字大小，缺省为10，字体大小                                                  |
 | rotate    | 0-360                                                                   | 水印文字旋转角度，默认为0，不旋转                                                |
 | fill        |                                                                      | RGB 颜色编码表，base64 URL encode 后的RGB格式，可以是颜色名称（比如red）或十六进制（比如\#FF0000），缺省为白色。 |
