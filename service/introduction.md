@@ -4,7 +4,7 @@
 
 ## 图片处理参数
 
-US3支持直接在图片URL后添加一个或多个参数处理图片，也支持将多个参数封装在一个样式内批量处理图片。如需了解图片处理参数的相关说明，请参见[图片处理参数](https://cms-docs.ucloudadmin.com/ufile/service/pic?id=基础图片信息获取)；图片样式的相关说明，请参见[图片样式](https://cms-docs.ucloudadmin.com/ufile/service/pic?id=基础图片信息获取)，目前图片样式仅支持新加坡地域，如有需要，请联系技术支持。
+US3支持直接在图片URL后添加一个或多个参数处理图片，也支持将多个参数封装在一个样式内批量处理图片。如需了解图片处理参数的相关说明，请参见[图片处理参数](https://docs.ucloud.cn/ufile/service/image_params)；图片样式的相关说明，请参见[图片样式](https://docs.ucloud.cn/ufile/service/image_style)，目前图片样式仅支持新加坡地域，如有需要，请联系技术支持。
 
 ## 使用限制
 
@@ -18,6 +18,6 @@ US3支持直接在图片URL后添加一个或多个参数处理图片，也支�
 
 ## 计费说明
 使用图片处理服务时，会产生如下费用：
-- 图片处理费用：按处理的原图实际大小计费，价格详情请参见[产品价格](https://docs.ucloud.cn/ufile/bill/billing);
+- 图片处理费用：包含基本图片处理以及图片高级压缩两种收费模式，价格详情请参见[产品价格](https://docs.ucloud.cn/ufile/bill/billing);
 - 请求费用：处理图片时会产生一次GetFile请求，按请求次数收费，价格详情请参见[产品价格](https://docs.ucloud.cn/ufile/bill/billing);
 - 流量费用：根据处理后的图片大小收取外网流出的流量费用，价格详情请参见[产品价格](https://docs.ucloud.cn/ufile/bill/billing)。

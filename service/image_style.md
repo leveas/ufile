@@ -15,7 +15,7 @@ US3支持将多个图片处理参数封装在一个样式（Style）内批量处
 ![image](/images/pic/add_style_1.png)
 ![image](/images/pic/code_edit.png)
 - 可视化编辑：通过可视化界面选择需要的图片处理功能，如基本处理、图片尺寸、图片效果、水印等。
-- 代码编辑：使用API代码编辑图片处理功能，格式为iopcmd=action1&parame=value1|iopcmd=action2&parame=value2...。
+- 代码编辑：使用代码编辑图片处理功能，格式为iopcmd=action1&parame=value1|iopcmd=action2&parame=value2...。
 5. 输入样式名称，点击确定即可
 
 

@@ -191,7 +191,7 @@ font参数中可选的文字类型以及编码对应表
 |字体    | 中文名                                                                    | 编码值                       |
 | ------- | -------------------------------------------------------------------- | -------------------------- |
 | SimSun | 宋体   |             5a6L5L2T    /      U2ltU3Vu                       | 
-| LiShu | 隶书   |            TGlTaHU                                                    | 
+| LiShu | 隶书   |            TGlTaHU=                                                    | 
 | FangZhengFangSong |   方正仿宋     |          RmFuZ1poZW5nRmFuZ1Nvbmc=                                                         | 
 | FangZhengHeiTi |   方正黑体  |                RmFuZ1poZW5nSGVpVGk=                                                     | 
 | FangZhengKaiTi |   方正楷体 | RmFuZ1poZW5nS2FpVGk=                                        | 
