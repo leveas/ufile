@@ -106,14 +106,13 @@ us3fs --update
 #### Linux
 
 ```bash
-❯ us3fs -h
 us3fs - a single posix file system based on us3
 USAGE
   us3fs [global options] bucket mountpoint
 Version
-  US3FS Version: v1.6.8
-  Commit ID: c87ec9c
-  Build: 2022-08-17:11:01:05
+  US3FS Version: v1.7.0
+  Commit ID: 5113784
+  Build: 2022-10-27:11:32:21
   Go Version: go1.16.3 linux/amd64
 
 FUSE
@@ -128,32 +127,37 @@ FUSE
   --keep_pagecache              Turn on pagecache, when the file is opened, it will be decided whether to update according to the modification time of the inode, so please pay attention to the attr_timeout and dcache_timeout parameters will have a certain impact on this
 
 OS
-  --dcache_timeout value     How long to cache dentry for us3fs (default: 5m0s)
-  --retry value              Number of times to retry a failed I/O (default: 5)
-  --parallel value           Number of parallel I/O thread (default: 32)
-  --debug                    Set debug level for fuse/winfsp
-  --level value              Set log level: error/warn/info/debug (default: "info")
-  --log_dir value            Set log dir
-  --log_max_age value        Set log max age (default: 72h0m0s)
-  --log_rotation_time value  Set log rotation time (default: 1h0m0s)
-  --enable_load_dentries     enable auto init dentries in memory
-  --readahead value          Readahead size. e.g.: 1m/1k/1  (default: "0")
-  --etag value               Check etag for part. value is percent(0~100) (default: 50)
-  --passwd value             specify access file (default: "/etc/us3fs/us3fs.yaml")
-  --enable_md5               Enalbe md5 in http header
-  --uid value                Specify default uid (default: 0)
-  --gid value                Specify default gid (default: 0)
-  --disable_check_vdir       disable detection of virtual directories
-  --update                   Update us3fs to /bin/us3fs
-  -n                         Doesn't check access when mount us3fs
-  -l                         Enable local cache for small file
-  -p value                   Specify local cache location (default: "/tmp/us3fs/")
-  --prefix value             Specify bucket prefix path
-  --gfl                      Enable get_file_list
-  --direct_read              Enable cache bypass read
-  --perf_dump value          How long to output the performance dump (default: 1h0m0s)
-  --skip_ne_dir_lookup       Skip non-essential directory checking, such as files ending in ".log",".png",".jpg", etc.
-  --storage_class value      Storage type, including "STANDARD", "IA" (default: "STANDARD")
+  --dcache_timeout value       How long to cache dentry for us3fs (default: 5m0s)
+  --retry value                Number of times to retry a failed I/O (default: 5)
+  --parallel value             Number of parallel I/O thread (default: 32)
+  --debug                      Set debug level for fuse/winfsp
+  --level value                Set log level: error/warn/info/debug (default: "info")
+  --log_dir value              Set log dir
+  --log_max_age value          Set log max age (default: 72h0m0s)
+  --log_rotation_time value    Set log rotation time (default: 1h0m0s)
+  --enable_load_dentries       enable auto init dentries in memory
+  --cache_db value             specify cache db path, e.g.: dbtype:dbpath
+  --local_write                write file to local and upload async
+  --max_local_file_size value  specify local file max size (default: "32m")
+  --read_after_write_finish    read operation will wait all write operation done
+  --finish_write_when_release  all written data will be uploaded when release
+  --readahead value            Readahead size. e.g.: 1m/1k/1  (default: "0")
+  --etag value                 Check etag for part. value is percent(0~100) (default: 50)
+  --passwd value               specify access file (default: "/etc/us3fs/us3fs.yaml")
+  --enable_md5                 Enalbe md5 in http header
+  --uid value                  Specify default uid (default: 0)
+  --gid value                  Specify default gid (default: 0)
+  --disable_check_vdir         disable detection of virtual directories
+  --update                     Update us3fs to /bin/us3fs
+  -n                           Doesn't check access when mount us3fs
+  -l                           Enable local cache for small file
+  -p value                     Specify local cache location (default: "/tmp/us3fs/")
+  --prefix value               Specify bucket prefix path
+  --gfl                        Enable get_file_list
+  --direct_read                Enable cache bypass read
+  --perf_dump value            How long to output the performance dump (default: 1h0m0s)
+  --skip_ne_dir_lookup         Skip non-essential directory checking, such as files ending in ".log",".png",".jpg", etc.
+  --storage_class value        Storage type, including "STANDARD", "IA" (default: "STANDARD")
 
 MISC
   --help, -h  show help
@@ -203,7 +207,6 @@ OS
   --perf_dump value       How long to output the performance dump (default: 1h0m0s)
   --skip_ne_dir_lookup    Skip non-essential directory checking, such as files ending in ".log",".png",".jpg", etc.
   --storage_class value   Storage type, including "STANDARD", "IA" (default: "STANDARD")
-
 MISC
   --help, -h  show help
   -f          foreground
@@ -248,7 +251,12 @@ MISC
 | storage_class       | storage_class           |   storage_class: STANDARD  |
 | p                   | local_path              |   local_path:/a/b/c        |
 | readahead           | readahead               |   readahead: 8M            |
-|            |                |               |
+| cache_db            | cache_db                | cache_db: leveldb:/data/us3fs_cachedb |
+| local_write         | local_write             | local_write: true          |
+| max_local_file_size | max_local_file_size     | max_local_file_size: 32M  |
+| finish_write_when_release | finish_write_when_release | finish_write_when_release: true |
+| read_after_write_finish   | read_after_write_finish   | read_after_write_finish: true |
+
 - 挂载参数配置在配置文件样例
 编辑/etc/us3fs/us3fs.yaml（如果没有该目录需要自行创建）依据具体需求将挂载参数写在配置文件，简化挂载命令
 
@@ -258,7 +266,7 @@ secret_key: ************************************
 endpoint: ufile.cn-north-02.ucloud.cn
 hosts: []
 get_file_list: true
-no_check: true 
+no_check: true
 writeback: true
 retry: 66
 dcache_timeout: 2h
@@ -332,6 +340,11 @@ etag :100
 | perf_dump          | 指定时间周期输出时延统计信息，默认周期是1hour                |
 | skip_ne_dir_lookup | 跳过非必要的目录检查，目前过滤支持".jpe"、".jpeg"、".png"、<br>".gz"、".tgz"、".gz"、".tgz"、".log"、".plot"、".js"、".html"、<br>".css"、".apk"为后缀的文件，需要确保bucket下没有用以上后缀<br>作为目录后缀的情况 |
 | storage_class      | 指定写入US3中文件的存储类型，支持`STANDARD`(标准), `IA`(低频)两种。 (default: `STANDARD`)|
+| cache_db | 指定本地存储us3fs元数据cache的方式及路径，格式为：`leveldb:/data/us3fs_cachedb` |
+| finish_write_when_release | 开启后，支持文件异步结束上传，用于支持一个fd有多次flush的场景 |
+| read_after_write_finish | 开启后，读取文件时，如果文件正在写入，会等待文件写入完成后才返回读的内容 |
+| local_write | 开启后，写入的数据会暂存到本地文件系统后再异步上传到服务端 |
+| max_local_file_size | 和 `local_write`搭配使用，指定能写入到本地文件系统的最大文件大小（默认值：32M） |
 
 #### MISC
 
