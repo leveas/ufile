@@ -30,11 +30,11 @@
     * [统计报表](/ufile/guide/dashboard)
     * [令牌管理](/ufile/guide/token)
 * 增值服务
-    * [图片处理服务]
-       * [简介]（/ufile/service/introduction）
-       * [图片处理参数]（/ufile/service/image_params）
-       * [图片样式]（/ufile/service/image_style）
-       * [原图保护]（/ufile/service/image_protect）
+    * 图片处理服务
+       * [简介](/ufile/service/introduction)
+       * [图片处理参数](/ufile/service/image_params)
+       * [图片样式](/ufile/service/image_style)
+       * [原图保护](/ufile/service/image_protect)
     * [解压缩服务](/ufile/service/zip)
     * [文档预览](/ufile/service/doc_preview)
 * [常用工具](/ufile/tools/introduction)
