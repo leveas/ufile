@@ -8,7 +8,10 @@ US3FS是一个在Linux/Windows系统环境中，将US3的存储空间（Bucket�
 
 ### 软件版本
 
-当前版本：v1.6.8
+当前版本：
+
+- linux: v1.7.0
+- windows: v1.6.8
 
 ### 运行环境
 
