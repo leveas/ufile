@@ -251,9 +251,9 @@ MISC
 | storage_class       | storage_class           |   storage_class: STANDARD  |
 | p                   | local_path              |   local_path:/a/b/c        |
 | readahead           | readahead               |   readahead: 8M            |
-| cache_db            | cache_db                | cache_db: /data/us3fs_cachedb |
+| cache_db            | cache_db                | cache_db: leveldb:/data/us3fs_cachedb |
 | local_write         | local_write             | local_write: true          |
-| max_local_file_size | max_local_file_size     | max_local_file_size: true  |
+| max_local_file_size | max_local_file_size     | max_local_file_size: 32M  |
 | finish_write_when_release | finish_write_when_release | finish_write_when_release: true |
 | read_after_write_finish   | read_after_write_finish   | read_after_write_finish: true |
 
