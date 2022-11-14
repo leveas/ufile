@@ -216,6 +216,8 @@
 消息模版处可以填写自定义的请求消息模版，使用%s标识告警信息，例如``` "alert! error: %s" ```
 在告警时会发送 ``` alert! error: number of resource bucket error 4xx is 100, greater than 50 ```
 
+* 总体示例
+![image](http://ufile-release.cn-bj.ufileos.com/image/rule_example.png)
 
 ### 启动迁移
 
