@@ -1,3 +1,8 @@
+
+# v1.10.0
+
+1. 新增告警系统，用户可以在web界面上配置告警
+
 # v1.9.1
 
 1. 修复了fetch任务回调请求没有带Content-Type: application/json的错误
