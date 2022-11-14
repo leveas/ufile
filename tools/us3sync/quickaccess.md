@@ -182,6 +182,41 @@
 2. 此表达式不会匹配源端前缀，因此和前缀配合使用可以匹配到某前缀下命中该正则表达式的文件。
 ```
 
+### 添加告警
+
+* 当任务的结束，worker宕机通过post请求发送消息
+* 收集迁移以及fetch任务的错误数据指标
+* 允许用户通过规则字符串的形式配置规则job错误数据告警，规则匹配时，通过post请求发送消息
+
+### 监控告警模块界面说明
+
+* 创建告警
+![image](uploads/a05c1e180e4a4e6b9eb38c040c0c75fa/image.png)
+![image](uploads/67bcdc4707dbb5fdd37093d06909ffdd/image.png)
+![image](uploads/1b5f445f5c0e48a058590548d2276ba6/image.png)
+
+复杂告警逻辑可以自行编辑，支持的变量如下:    
+* RESOURCE_ERR_4XX: 源端4xx错误数
+* RESOURCE_ERR_5XX: 源端5xx错误数
+* TARGET_ERR_4XX:   目的端4xx错误数
+* TARGET_ERR_5XX:   目的端5xx错误数
+* LOCAL_ERR:        其它错误数
+* Q_LEN:            fetch任务正在等待的迁移的文件数量
+
+支持的操作符如下:    
+* ||: 或逻辑
+* &&: 与逻辑
+* (): 括号内的判断逻辑优先级最高
+
+例如 ``` (RESOURCE_ERR_4XX > 100 || RESOURCE_ERR_5XX > 200) && TARGET_ERR_4XX > 150 && Q_LEN > 150 ```
+
+告警请求的header可以在如下位置添加
+![image](uploads/a131317ab6ca11125c9659f8f65daa4b/image.png)
+
+消息模版处可以填写自定义的请求消息模版，使用%s标识告警信息，例如``` "alert! error: %s" ```
+在告警时会发送 ``` alert! error: number of resource bucket error 4xx is 100, greater than 50 ```
+
+
 ### 启动迁移
 
 参考 [任务管理界面说明](#任务管理界面说明)，点击开启迁移按钮。
