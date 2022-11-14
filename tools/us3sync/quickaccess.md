@@ -191,9 +191,9 @@
 ### 监控告警模块界面说明
 
 * 创建告警
-![image](uploads/a05c1e180e4a4e6b9eb38c040c0c75fa/image.png)
-![image](uploads/67bcdc4707dbb5fdd37093d06909ffdd/image.png)
-![image](uploads/1b5f445f5c0e48a058590548d2276ba6/image.png)
+![image](http://ufile-release.cn-bj.ufileos.com/image/alert_module_create.png)
+![image](http://ufile-release.cn-bj.ufileos.com/image/alert_module_modal.png)
+![image](http://ufile-release.cn-bj.ufileos.com/image/alert_module_modal2.png)
 
 复杂告警逻辑可以自行编辑，支持的变量如下:    
 * RESOURCE_ERR_4XX: 源端4xx错误数
@@ -211,7 +211,7 @@
 例如 ``` (RESOURCE_ERR_4XX > 100 || RESOURCE_ERR_5XX > 200) && TARGET_ERR_4XX > 150 && Q_LEN > 150 ```
 
 告警请求的header可以在如下位置添加
-![image](uploads/a131317ab6ca11125c9659f8f65daa4b/image.png)
+![image](http://ufile-release.cn-bj.ufileos.com/image/alert_module_modal_header.png)
 
 消息模版处可以填写自定义的请求消息模版，使用%s标识告警信息，例如``` "alert! error: %s" ```
 在告警时会发送 ``` alert! error: number of resource bucket error 4xx is 100, greater than 50 ```
