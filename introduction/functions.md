@@ -68,7 +68,7 @@ US3 产品除了支持标准的对象存储上传、下载功能外，提供了�
 
 ## 增值功能
 
-### [图片处理](https://docs.ucloud.cn/ufile/service/pic)
+### [图片处理](https://docs.ucloud.cn/ufile/service/introduction)
 
 支持对上传保存在对象存储空间中的图片进行一系列图片处理操作。
 
