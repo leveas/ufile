@@ -61,7 +61,7 @@
 ![image](/images/guide-management/单个获取url.png)
 ![image](/images/guide-management/单个获取url2.png)
 
-**单个文件获取URL**：勾选待导出URL文件后单击“导出URL列表”即可，弹窗内可以设置传输协议（HTTPS或HTTP）、过期时间（5分钟、30分钟、12小时或自定义）、自有域名，确认资源后即可。
+**批量文件获取URL**：勾选待导出URL文件后单击“导出URL列表”即可，弹窗内可以设置传输协议（HTTPS或HTTP）、过期时间（5分钟、30分钟、12小时或自定义）、自有域名，确认资源后即可。
 
 ![image](/images/guide-management/批量导出url.png)
 ![image](/images/guide-management/批量导出url2.png)
