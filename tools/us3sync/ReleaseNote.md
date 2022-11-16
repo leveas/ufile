@@ -1,3 +1,6 @@
+# v1.10.1
+
+1. 修复在error时worker会panic的错误
 
 # v1.10.0
 
