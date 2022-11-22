@@ -4,7 +4,7 @@
 
 ## 图片处理参数
 
-US3支持直接在图片URL后添加一个或多个参数处理图片，也支持将多个参数封装在一个样式内批量处理图片。如需了解图片处理参数的相关说明，请参见[图片处理参数](https://docs.ucloud.cn/ufile/service/image_params)；图片样式的相关说明，请参见[图片样式](https://docs.ucloud.cn/ufile/service/image_style)，目前图片样式支持新加坡、伦敦、首尔香港、拉各斯、胡志明、迪拜以及台北地域，如其他地域有需要，请联系技术支持。
+US3支持直接在图片URL后添加一个或多个参数处理图片，也支持将多个参数封装在一个样式内批量处理图片。如需了解图片处理参数的相关说明，请参见[图片处理参数](https://docs.ucloud.cn/ufile/service/image_params)；图片样式的相关说明，请参见[图片样式](https://docs.ucloud.cn/ufile/service/image_style)，目前图片样式支持新加坡、伦敦、首尔、香港、拉各斯、胡志明、迪拜以及台北地域，如其他地域有需要，请联系技术支持。
 
 ## 使用限制
 
