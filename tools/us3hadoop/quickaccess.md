@@ -119,6 +119,14 @@
     <name>fs.us3.metadata.zookeeper.addrs</name>
     <value>uhadoop-q4mbrxk2-master1:2181,uhadoop-q4mbrxk2-master2:2181,uhadoop-q4mbrxk2-core1:2181</value>
   </property>
+  <property>
+    <name>fs.us3.retryTimes</name>
+    <value>5</value>
+  </property>
+  <property>
+    <name>fs.us3.timeout</name>
+    <value>60</value>
+  </property>
 	......
 </configuration>
 ```
