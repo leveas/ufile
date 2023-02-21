@@ -35,6 +35,8 @@
 | fs.us3.metadata.host            | 在fs.us3.metadata.usetrue情况下生效，可以直接指定IP:Port的地址形式，这种方式不需要配置/etc/hosts文件。用户也可以指定自定义域名，需要在/etc/hosts中配置解析地址，或者配置DNS解析。该参数处于测试中。 | 无          |
 | fs.us3.metadata.zookeeper.addrs | 高可用vmds集群方案中使用的zookeeper节点信息，参数格式为以","分割的zookeeper服务器地址和端口号，例如：uhadoop-q4mbrxk2-master1:2181,uhadoop-q4mbrxk2-master2:2181,uhadoop-q4mbrxk2-core1:2181。如果您配置了fs.us3.metadata.host参数，则本参数无效。**该功能需要US3适配器版本>=1.3.0。** | 无          |
 | fs.us3.generate.md5             | 默认为`false`，如果为`true`则在写入US3时，客户端会计算一个MD5，并在最后会以`md5-hash`为key，base64编码的md5值为value写入到文件的元数据中。开启会增加>=30%的写入时延。<br> **该功能需要US3适配器的版本>=1.0.2** | false       |
+| fs.us3.retryTimes             | 请求重试次数 **该功能需要US3适配器的版本>=1.4.0** | 30       |
+| fs.us3.timeout             | 请求超时时间 **该功能需要US3适配器的版本>=1.4.0** | 11       |
 
 ### Hadoop配置
 
@@ -118,6 +120,14 @@
   <property>
     <name>fs.us3.metadata.zookeeper.addrs</name>
     <value>uhadoop-q4mbrxk2-master1:2181,uhadoop-q4mbrxk2-master2:2181,uhadoop-q4mbrxk2-core1:2181</value>
+  </property>
+  <property>
+    <name>fs.us3.retryTimes</name>
+    <value>5</value>
+  </property>
+  <property>
+    <name>fs.us3.timeout</name>
+    <value>60</value>
   </property>
 	......
 </configuration>
