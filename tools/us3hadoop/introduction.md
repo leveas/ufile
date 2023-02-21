@@ -2,7 +2,8 @@
 
 ## 概述
 
-US3Hadoop适配器是为了解决Hadoop访问UCloud对象存储US3的问题，实现了标准的Hadoop文件系统，支持Hive、Spark、Flink等大数据计算框架可以像访问HDFS文件系统一样，来读写存储在US3上的数据。
+US3Hadoop适配器是为了解决Hadoop访问UCloud对象存储US3的问题，实现了标准的Hadoop文件系统，支持Hive、Spark、Flink等大数据计算框架可以像访问HDFS文件系统一样，来读写存储在US3上的数据。    
+现在适配器已经开源，你可以在github上获取到[适配器的源代码](https://github.com/us3-epoch/us3-bigdata-adaptor)
 
 ## 原理说明
 
