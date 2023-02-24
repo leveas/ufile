@@ -25,7 +25,7 @@
 |----|----|
 |TargetPrefix|由用户指定，表示存储访问日志记录的名称前缀，可以为空|
 |YYYY-MM-DD-HH|分别是该日志被创建时的阿拉伯数字的年、月、日、小时|
-|UniqueString|为系统生成的位字符串，用于唯一标识该 Log 文件|
+|UniqueString|为系统生成的字符串，用于唯一标识该 Log 文件|
 
 存储空间访问日志的名称例子如下： 
 ```ufile-log/SourceBucket-2018-10-22-08-537928a6-8be3-462c-a93c-b531028fe3fb.csv```
