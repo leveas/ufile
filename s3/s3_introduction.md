@@ -31,7 +31,7 @@ US3 目前的 S3 协议模块对标准 S3 协议的支持如下表：
 |    12    | DELETE Object             | 参考[US3 兼容 S3 API - v2.2.pdf](http://ufile-release.cn-bj.ufileos.com/s3%2FUS3%20%E5%85%BC%E5%AE%B9S3%20API%20-%20v2.2.pdf) |
 |    13    | Delete Multiple Objects   | 参考[US3 兼容 S3 API - v2.2.pdf](http://ufile-release.cn-bj.ufileos.com/s3%2FUS3%20%E5%85%BC%E5%AE%B9S3%20API%20-%20v2.2.pdf) |
 |    14    | Initiate Multipart Upload | 参考[US3 兼容 S3 API - v2.2.pdf](http://ufile-release.cn-bj.ufileos.com/s3%2FUS3%20%E5%85%BC%E5%AE%B9S3%20API%20-%20v2.2.pdf) |
-|    15    | Upload Part               | 参考[US3 兼容 S3 API - v2.2.pdf](http://ufile-release.cn-bj.ufileos.com/s3%2FUS3%20%E5%85%BC%E5%AE%B9S3%20API%20-%20v2.2.pdf) , **注意目前只支持 8MB 大小的分片!!!!** |
+|    15    | Upload Part               | 参考[US3 兼容 S3 API - v2.2.pdf](http://ufile-release.cn-bj.ufileos.com/s3%2FUS3%20%E5%85%BC%E5%AE%B9S3%20API%20-%20v2.2.pdf) |
 |    16    | Complete Multipart Upload | 参考[US3 兼容 S3 API - v2.2.pdf](http://ufile-release.cn-bj.ufileos.com/s3%2FUS3%20%E5%85%BC%E5%AE%B9S3%20API%20-%20v2.2.pdf) |
 |    17    | Abort Multipart Upload    | 参考[US3 兼容 S3 API - v2.2.pdf](http://ufile-release.cn-bj.ufileos.com/s3%2FUS3%20%E5%85%BC%E5%AE%B9S3%20API%20-%20v2.2.pdf) |
 
@@ -53,7 +53,7 @@ US3 目前的 S3 协议模块对标准 S3 协议的支持如下表：
 
       例如AWS S3 Java SDK:
       System.setProperty(SkipMd5CheckStrategy.DISABLEGETOBJECTMD5VALIDATION_PROPERTY,"");
-      
+
       System.setProperty(SkipMd5CheckStrategy.DISABLEPUTOBJECTMD5VALIDATION_PROPERTY,"");
 
 ### 仅支持签名 V4
@@ -76,20 +76,25 @@ S3 的 AccessKeyID（或称AccessKey）和 SecretAccessKey（或称SecretKey）�
 
 * 创建该 bucket 的账户与创建 Token 的账户必须一致；
 
+### S3的分片大小说明
+
+1. 为了达到更好的传输性能，默认情况下仅支持8M大小的分片。
+2. 部分地域已开通动态分片功能，如果固定8M分片无法满足需求，可联系技术支持开通动态分片。
+
 ### API支持路径风格和虚拟主机风格
 
 **路径风格格式为: `http://\${Endpoint}/\${bucket名字}/\${key名字}`，bucket 名字作为路径使用的一部分。**
-例如，AWS S3 Java SDK 在 UCloud 北京地域走外网使用 US3 S3 服务则设置如下：  
+例如，AWS S3 Java SDK 在 UCloud 北京地域走外网使用 US3 S3 服务则设置如下：
 
 
     "AWSCredential credentials = new BasicAWSCredentials(ACCESS_KEY,
-    SECRET_KEY);  
-    ClientConfiguration clientConfig = new ClientConfiguration();  
-    ...  
-    S3ClientOptions clientOptions = S3ClientOptions.builder().build();  
-    clientOptions.setPathStyleAccess(true); // 表明使用路径风格API  
-    AmazonS3 conn = new AmazonS3Client(credential, clientConfig);  
-    conn.setS3ClientOptions(clientOptions);  
+    SECRET_KEY);
+    ClientConfiguration clientConfig = new ClientConfiguration();
+    ...
+    S3ClientOptions clientOptions = S3ClientOptions.builder().build();
+    clientOptions.setPathStyleAccess(true); // 表明使用路径风格API
+    AmazonS3 conn = new AmazonS3Client(credential, clientConfig);
+    conn.setS3ClientOptions(clientOptions);
     conn.setEndpoint("s3-cn-bj.ufileos.com");"
 
 **虚拟主机风格: http://${bucket名字}.${Endpoint}/${key名字}，类似US3目前使用的URL形式。**
