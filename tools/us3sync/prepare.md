@@ -101,7 +101,6 @@ US3SYNC提供快速拉起环境的云主机镜像，本节介绍如何使用UHos
 | ind-mumbai 孟买A      | uimage-bai4bw |
 | idn-jakarta 雅加达A   | uimage-04m5os |
 | kr-seoul 首尔A        | uimage-nrgrdw |
-| rus-mosc 莫斯科A      | uimage-4km1pq |
 | afr-nigeria 尼日利亚A | uimage-krn5jt |
 | sg 新加坡A            | uimage-kzjfo1 |
 | th-bkk 曼谷A          | uimage-vxedo0 |
