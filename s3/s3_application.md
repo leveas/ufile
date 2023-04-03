@@ -74,8 +74,7 @@ S3 Browser 是一种易于使用和强大的 Amazon S3 免费客户端。 它提
 
 ##### 解决方案：
 
-- 使用内测版us3browser工具进行上传(s3协议),有需要使用，请联系技术支持获取使用权限
-- 使用us3cli工具进行上传(us3协议)。使用方式参考 [us3cli 工具简介](
+- 使用us3cli工具进行上传(us3协议)。使用方式参考 [us3cli 工具简介](https://docs.ucloud.cn/ufile/tools/us3cli/introduction)
 
 ## 网络文件系统 S3FS
 
