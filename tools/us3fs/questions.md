@@ -45,6 +45,18 @@
 - 开启参数skip_ne_dir_lookup，这样可以减少lookup的操作时延；
 
 ## 内存使用量高，导致OOM
+
+如果us3fs异常退出，通常是机器内存不足导致，可以通过检查系统日志是否有OOM来判断，如果发现了类似如下的日志，则可以确定是发生了OOM
+
+```
+earlyoom: low memory! at or below SIGKILL limits: mem  2.00%, swap 100.00%
+earlyoom: sending SIGKILL to process 5637 uid 0 "us3fs": badness 671, VmRSS 2550 MiB
+```
+
+建议解决方案：
+
+- 由于us3fs读写都会占据机器内存，要达到最佳的读写性能，建议更换到内存充裕的机器上使用
+- 如果对读写性能不是特别敏感，可以通过降低parallel参数(默认为32)来降低us3fs的读写并发，以达到减少内存使用的目的
 - 如果内存本身紧张，建议entry_timeout,attr_timeout,dcache_timeout参数设置为0s
 - 检查是否开启readahead，如果开启，检查是否过大，调小该值
 - 如果不是顺序读大文件的场景，建议设置direct_read参数
