@@ -16,7 +16,7 @@
 
 ### 使用PathX全球动态加速
 
-PathX的使用文档见：[PathX文档](https://docs.ucloud.cn/pathx)
+PathX的使用文档见：[PathX文档](https://docs.ucloud.cn/pathx/README)
 
 ### 配置US3的自定义域名
 
