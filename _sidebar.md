@@ -37,6 +37,7 @@
        * [原图保护](/ufile/service/image_protect)
     * [解压缩服务](/ufile/service/zip)
     * [文档预览](/ufile/service/doc_preview)
+    * [内容审核服务](/ufile/service/moderation)
 * [常用工具](/ufile/tools/introduction)
     * US3CLI 命令行工具
         * [工具简介](/ufile/tools/us3cli/introduction)
