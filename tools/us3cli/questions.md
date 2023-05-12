@@ -71,8 +71,8 @@ qps代表每秒请求数量限制，如qps为1，那么该请求会限制在1秒
   
 ### 问题原因
   
-  US3令牌（公钥以TOKEN_为首）只支持对bucket文件操作，在使用需要ApiKey鉴权的命令时会报错：ERROR Signature VerifyAC Error
+  US3令牌（公钥以TOKEN_为首）仅支持对bucket文件相关操作，在使用需要ApiKey鉴权的命令时会报错：ERROR Signature VerifyAC Error
   
 ### 解决方案
   
-  鉴权改用ApiKey
+  鉴权改用ApiKey方式
