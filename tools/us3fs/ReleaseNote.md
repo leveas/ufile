@@ -1,5 +1,15 @@
 # 历史版本
 
+## US3FS V1.7.6
+
+### BUG修复
+
+- 修复部分场景下小文件上传失败的问题
+
+### 新特性
+
+- 增加--disable_remove参数，用来禁用 unlink, rmdir, rename等操作
+
 ## US3FS V1.7.5
 
 ### BUG修复
