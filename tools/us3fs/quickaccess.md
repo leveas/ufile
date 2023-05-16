@@ -110,9 +110,9 @@ us3fs - a single posix file system based on us3
 USAGE
   us3fs [global options] bucket mountpoint
 Version
-  US3FS Version: v1.7.5
-  Commit ID: b327ece
-  Build: 2023-05-09:11:27:32
+  US3FS Version: v1.7.6
+  Commit ID: c173b68
+  Build: 2023-05-16:16:36:57
   Go Version: go1.16.3 linux/amd64
 
 FUSE
@@ -130,6 +130,7 @@ OS
   --dcache_timeout value       How long to cache dentry for us3fs (default: 5m0s)
   --retry value                Number of times to retry a failed I/O (default: 5)
   --parallel value             Number of parallel I/O thread (default: 32)
+  --disable_remove             Disable remove op, such as unlink, rmdir, rename
   --debug                      Set debug level for fuse/winfsp
   --level value                Set log level: error/warn/info/debug (default: "info")
   --log_dir value              Set log dir
@@ -153,6 +154,7 @@ OS
   -l                           Enable local cache for small file
   -p value                     Specify local cache location (default: "/tmp/us3fs/")
   --prefix value               Specify bucket prefix path
+  --open_rename                Use rename api rather than copy and delete
   --gfl                        Enable get_file_list
   --direct_read                Enable cache bypass read
   --perf_dump value            How long to output the performance dump (default: 1h0m0s)
@@ -235,6 +237,7 @@ MISC
 | disable_async_read  | disable_async_read      |   disable_async_read:true  |
 | retry               | retry                   |   retry: 66                |
 | parallel            | parallel                |   parallel: 77             |
+| disable_remove      | disable_remove          |   disable_remove: true     |
 | congestion_threshold| congestion_threshold    |   congestion_threshold: 88 |
 | max_background      | max_background          |   max_background: 99       |
 | uid                 | uid                     |   uid=100                  |
