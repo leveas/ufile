@@ -25,7 +25,6 @@
     * [镜像回源](/ufile/guide/mirror)
     * [跨区域复制](/ufile/guide/multisite)
     * [跨域设置](/ufile/guide/cors)
-    * [数据分析](/ufile/guide/analyze)
     * [防盗链](/ufile/guide/referer)
     * [统计报表](/ufile/guide/dashboard)
     * [令牌管理](/ufile/guide/token)
