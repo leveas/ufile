@@ -15,46 +15,75 @@ S3协议是AWS推出，在对象存储行业成为事实标准，US3产品在自
 
 US3 目前的 S3 协议模块对标准 S3 协议的支持如下表：
 
-| **编号** | **API名字**               | **备注说明**                                                 |
-| :------: | ------------------------- | ------------------------------------------------------------ |
-|    1     | GET Bucket service        | 用于获取 Bucket 列表，只能获取公私钥或者 Token 拥有者创建的 Bucket |
-|    2     | GET Bucket location       | 返回所在地域名，不建议依赖该 API                             |
-|    3     | GET Bucket acl            | 没有太多意义，主要为了支持 S3 Browser 而实现，Permission字段永远为 “FULL_CONTROL” |
-|    4     | GET Bucket versioning     | 没有太多意义，主要为了支持 S3 Browser 而实现，Status 字段永远为空字符串 |
-|    5     | GET Object acl            | 没有太多意义，主要为了支持 S3 Browser 而实现，Permission 字段永远为 “FULL_CONTROL” |
-|    6     | HEAD Object               | 参考[US3 兼容 S3 API - v2.2.pdf](http://ufile-release.cn-bj.ufileos.com/s3%2FUS3%20%E5%85%BC%E5%AE%B9S3%20API%20-%20v2.2.pdf) |
-|    7     | PUT Object                | 参考[US3 兼容 S3 API - v2.2.pdf](http://ufile-release.cn-bj.ufileos.com/s3%2FUS3%20%E5%85%BC%E5%AE%B9S3%20API%20-%20v2.2.pdf) |
-|    8     | POST Object               | 参考[US3 兼容 S3 API - v2.2.pdf](http://ufile-release.cn-bj.ufileos.com/s3%2FUS3%20%E5%85%BC%E5%AE%B9S3%20API%20-%20v2.2.pdf) |
-|    9     | PUT Object copy           | 参考[US3 兼容 S3 API - v2.2.pdf](http://ufile-release.cn-bj.ufileos.com/s3%2FUS3%20%E5%85%BC%E5%AE%B9S3%20API%20-%20v2.2.pdf) |
-|    10    | GET Object                | 参考[US3 兼容 S3 API - v2.2.pdf](http://ufile-release.cn-bj.ufileos.com/s3%2FUS3%20%E5%85%BC%E5%AE%B9S3%20API%20-%20v2.2.pdf) |
-|    11    | List Objects              | 参考[US3 兼容 S3 API - v2.2.pdf](http://ufile-release.cn-bj.ufileos.com/s3%2FUS3%20%E5%85%BC%E5%AE%B9S3%20API%20-%20v2.2.pdf) |
-|    12    | DELETE Object             | 参考[US3 兼容 S3 API - v2.2.pdf](http://ufile-release.cn-bj.ufileos.com/s3%2FUS3%20%E5%85%BC%E5%AE%B9S3%20API%20-%20v2.2.pdf) |
-|    13    | Delete Multiple Objects   | 参考[US3 兼容 S3 API - v2.2.pdf](http://ufile-release.cn-bj.ufileos.com/s3%2FUS3%20%E5%85%BC%E5%AE%B9S3%20API%20-%20v2.2.pdf) |
-|    14    | Initiate Multipart Upload | 参考[US3 兼容 S3 API - v2.2.pdf](http://ufile-release.cn-bj.ufileos.com/s3%2FUS3%20%E5%85%BC%E5%AE%B9S3%20API%20-%20v2.2.pdf) |
-|    15    | Upload Part               | 参考[US3 兼容 S3 API - v2.2.pdf](http://ufile-release.cn-bj.ufileos.com/s3%2FUS3%20%E5%85%BC%E5%AE%B9S3%20API%20-%20v2.2.pdf) |
-|    16    | Complete Multipart Upload | 参考[US3 兼容 S3 API - v2.2.pdf](http://ufile-release.cn-bj.ufileos.com/s3%2FUS3%20%E5%85%BC%E5%AE%B9S3%20API%20-%20v2.2.pdf) |
-|    17    | Abort Multipart Upload    | 参考[US3 兼容 S3 API - v2.2.pdf](http://ufile-release.cn-bj.ufileos.com/s3%2FUS3%20%E5%85%BC%E5%AE%B9S3%20API%20-%20v2.2.pdf) |
+| **编号** | **API名字**                                                                                                                                                                   | **备注说明**                                                                                                                  |
+| :------: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+|    1     | [HeadBucket](https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadBucket.html)                                                                                             | 检测 Bucket 是否存在以及您是否有权限访问该 Bucket                                                                             |
+|    2     | [ListBuckets](https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html)                                                                                           | 获取 Bucket 列表，只能获取公私钥或者 Token 拥有者创建的 Bucket                                                                |
+|    3     | [GetBucketLocation](https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLocation.html)                                                                               | 返回所在地域名，不建议依赖该 API                                                                                              |
+|    4     | [GetBucketAcl](https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAcl.html)                                                                                         | 没有太多意义，主要为了支持 S3 Browser 而实现，响应体中的 `Permission` 字段永远为 `FULL_CONTROL`                               |
+|    5     | [GetBucketVersioning](https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketVersioning.html)                                                                           | 没有太多意义，主要为了支持 S3 Browser 而实现，响应体中的 `Status` 字段永远为空字符串                                          |
+|    6     | [PutBucketLifecycleConfiguration](https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html)                                                   | 为 Bucket 创建新的生命周期配置或替换现有的生命周期配置规则。注意，这将覆盖现有的所有生命周期配置规则                          |
+|    7     | [GetBucketLifecycleConfiguration](https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html)                                                   | 获取 Bucket 中设置的生命周期配置规则                                                                                          |
+|    8     | [DeleteBucketLifecycle](https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html)                                                                       | 删除 Bucket 中设置的所有生命周期配置规则。注意，不支持删除 Bucket 中的指定某个或多个生命周期配置规则                          |
+|    9     | [GetObjectAcl](https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html)                                                                                         | 获取 Object 的访问权限信息                                                                                                    |
+|    10    | [PutObjectAcl](https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectAcl.html)                                                                                         | 设置 Object 的访问权限信息                                                                                                    |
+|    11    | [HeadObject](https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadObject.html)                                                                                             | 参考[US3 兼容 S3 API - v2.2.pdf](http://ufile-release.cn-bj.ufileos.com/s3%2FUS3%20%E5%85%BC%E5%AE%B9S3%20API%20-%20v2.2.pdf) |
+|    12    | [PutObject](https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html)                                                                                               | 参考[US3 兼容 S3 API - v2.2.pdf](http://ufile-release.cn-bj.ufileos.com/s3%2FUS3%20%E5%85%BC%E5%AE%B9S3%20API%20-%20v2.2.pdf) |
+|    13    | [PostObject](https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPOST.html)                                                                                             | 参考[US3 兼容 S3 API - v2.2.pdf](http://ufile-release.cn-bj.ufileos.com/s3%2FUS3%20%E5%85%BC%E5%AE%B9S3%20API%20-%20v2.2.pdf) |
+|    14    | [CopyObject](https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html)                                                                                             | 参考[US3 兼容 S3 API - v2.2.pdf](http://ufile-release.cn-bj.ufileos.com/s3%2FUS3%20%E5%85%BC%E5%AE%B9S3%20API%20-%20v2.2.pdf) |
+|    15    | [GetObject](https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html)                                                                                               | 参考[US3 兼容 S3 API - v2.2.pdf](http://ufile-release.cn-bj.ufileos.com/s3%2FUS3%20%E5%85%BC%E5%AE%B9S3%20API%20-%20v2.2.pdf) |
+|    16    | [ListObjects](https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html)/[ListObjectsV2](https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html)   | 参考[US3 兼容 S3 API - v2.2.pdf](http://ufile-release.cn-bj.ufileos.com/s3%2FUS3%20%E5%85%BC%E5%AE%B9S3%20API%20-%20v2.2.pdf) |
+|    17    | [DeleteObject](https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html)/[DeleteObjects](https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjects.html) | 参考[US3 兼容 S3 API - v2.2.pdf](http://ufile-release.cn-bj.ufileos.com/s3%2FUS3%20%E5%85%BC%E5%AE%B9S3%20API%20-%20v2.2.pdf) |
+|    18    | [CreateMultipartUpload](https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html)                                                                       | 参考[US3 兼容 S3 API - v2.2.pdf](http://ufile-release.cn-bj.ufileos.com/s3%2FUS3%20%E5%85%BC%E5%AE%B9S3%20API%20-%20v2.2.pdf) |
+|    19    | [UploadPart](https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html)                                                                                             | 参考[US3 兼容 S3 API - v2.2.pdf](http://ufile-release.cn-bj.ufileos.com/s3%2FUS3%20%E5%85%BC%E5%AE%B9S3%20API%20-%20v2.2.pdf) |
+|    20    | [UploadPartCopy](https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html)                                                                                     | 参考[US3 兼容 S3 API - v2.2.pdf](http://ufile-release.cn-bj.ufileos.com/s3%2FUS3%20%E5%85%BC%E5%AE%B9S3%20API%20-%20v2.2.pdf) |
+|    21    | [CompleteMultipartUpload](https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html)                                                                   | 参考[US3 兼容 S3 API - v2.2.pdf](http://ufile-release.cn-bj.ufileos.com/s3%2FUS3%20%E5%85%BC%E5%AE%B9S3%20API%20-%20v2.2.pdf) |
+|    22    | [AbortMultipartUpload](https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html)                                                                         | 参考[US3 兼容 S3 API - v2.2.pdf](http://ufile-release.cn-bj.ufileos.com/s3%2FUS3%20%E5%85%BC%E5%AE%B9S3%20API%20-%20v2.2.pdf) |
+|    23    | [ListMultipartUploads](https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html)                                                                         | 获取正在执行的分片上传请求 ID                                                                                                 |
+|    24    | [ListParts](https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html)                                                                                               | 获取正在执行分片上传的分片信息                                                                                                |
+|    25    | [RestoreObject](https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html)                                                                                       | 解冻处于归档状态的文件                                                                                                        |
 
 注意:
 
-* PUT Object 目前仅支持 1GB 大小文件，如果需要上传大于 1GB 的文件，请采用分片上传的 API；
+* PutObject 目前仅支持 1GB 大小文件，如果需要上传大于 1GB 的文件，请采用分片上传的 API
 
-* POST Object 目前仅支持最大 32MB 文件的上传；
+* PostObject 目前仅支持最大 32MB 文件的上传
 
-* 目前US3 S3 不支持多版本功能；
+* CopyObject 目前仅支持最大 100MB 文件的拷贝
 
-* ~~目前US3 S3 不支持用户自定义元数据功能，如Header头指定x-amz-meta-*~~；
+* UploadPart 目前仅支持 8MB 定长分片大小（最后一个分片允许小于 8MB）。若有不定长分片的需求，请联系技术支持
 
-* ~~目前US3 S3 不支持存储类型，默认为标准类型~~，存储类型转换规则参考【存储类型转换规则】；
+* US3 S3 对 AWS S3 兼容的存储类型及其转换规则参考 [存储类型转换规则](#存储类型转换规则)
 
-* ~~目前US3 S3 不支持x-amz-content-sha256为`UNSIGNED-PAYLOAD`的签名~~；
+* US3 的 ETag 计算方式与 AWS S3 存在部分差异，建议不依赖该 ETag
 
-* 目前不支持 S3 API 的 MD5 校验（原因跟 S3 的 ETag 计算方式有差异），建议关闭:
+* 目前不支持 S3 API 的 MD5 校验，建议关闭:
 
       例如AWS S3 Java SDK:
       System.setProperty(SkipMd5CheckStrategy.DISABLEGETOBJECTMD5VALIDATION_PROPERTY,"");
 
       System.setProperty(SkipMd5CheckStrategy.DISABLEPUTOBJECTMD5VALIDATION_PROPERTY,"");
+
+* US3 的访问权限（ACL）定义与 AWS S3 存在差异，具体参考 [访问权限定义（ACL）](#访问权限定义（ACL）)
+
+* 目前文件访问权限控制 API（GetObjectAcl、PutObjectAcl）仅在部分地域支持
+
+* 目前生命周期配置规则控制 API（PutBucketLifecycleConfiguration、GetBucketLifecycleConfiguration、DeleteBucketLifecycle）仅在部分地域支持
+
+* 目前 UploadPartCopy 处于内测阶段。若有使用需求，请联系技术支持
+
+* 目前不支持多版本功能（Versioning）
+
+* 目前不支持标签功能（Tagging）
+
+### 访问权限定义（ACL）
+
+| US3 ACL           | [AWS S3 Canned ACL](https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#canned-acl)     |
+| ----------------- | ----------------------------------------------------------------------------------------------------------- |
+| private           | private                                                                                                     |
+| public-read       | public-read                                                                                                 |
+| public-read-write | public-read-write                                                                                           |
+| 不支持            | aws-exec-read<br>authenticated-read<br>bucket-owner-read<br>bucket-owner-full-control<br>log-delivery-write |
 
 ### 仅支持签名 V4
 
@@ -104,7 +133,7 @@ S3 的 AccessKeyID（或称AccessKey）和 SecretAccessKey（或称SecretKey）�
 | **编号** | **地域** | **外网Endpoint**            | **内网Endpoint**                     |
 | :------- | :------- | :-------------------------- | :----------------------------------- |
 | 1        | 华北一   | s3-cn-bj.ufileos.com        | internal.s3-cn-bj.ufileos.com        |
-| 2        | 华北二   | s3-cn-wlcb.ufileos.com        | internal.s3-cn-wlcb.ufileos.com        |
+| 2        | 华北二   | s3-cn-wlcb.ufileos.com      | internal.s3-cn-wlcb.ufileos.com      |
 | 3        | 上海     | s3-cn-sh2.ufileos.com       | internal.s3-cn-sh2.ufileos.com       |
 | 4        | 广州     | s3-cn-gd.ufileos.com        | internal.s3-cn-gd.ufileos.com        |
 | 5        | 香港     | s3-hk.ufileos.com           | internal.s3-hk.ufileos.com           |
@@ -112,7 +141,7 @@ S3 的 AccessKeyID（或称AccessKey）和 SecretAccessKey（或称SecretKey）�
 | 7        | 新加坡   | s3-sg.ufileos.com           | internal.s3-sg.ufileos.com           |
 | 8        | 雅加达   | s3-idn-jakarta.ufileos.com  | internal.s3-idn-jakarta.ufileos.com  |
 | 9        | 台北     | s3-tw-tp.ufileos.com        | internal.s3-tw-tp.ufileos.com        |
-| 10        | 拉各斯   | s3-afr-nigeria.ufileos.com  | internal.s3-afr-nigeria.ufileos.com  |
+| 10       | 拉各斯   | s3-afr-nigeria.ufileos.com  | internal.s3-afr-nigeria.ufileos.com  |
 | 11       | 圣保罗   | s3-bra-saopaulo.ufileos.com | internal.s3-bra-saopaulo.ufileos.com |
 | 12       | 迪拜     | s3-uae-dubai.ufileos.com    | internal.s3-uae-dubai.ufileos.com    |
 | 13       | 法兰克福 | s3-ge-fra.ufileos.com       | internal.s3-ge-fra.ufileos.com       |
