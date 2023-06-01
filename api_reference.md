@@ -34,7 +34,7 @@
 
 [下载文件-GetFile](https://docs.ucloud.cn/api/ufile-api/get_file)
 
-[查询文件基本信息-HEADFile](https://docs.ucloud.cn/api/ufile-api/head_file)
+[查询文件基本信息-HeadFile](https://docs.ucloud.cn/api/ufile-api/head_file)
 
 [删除文件-DeleteFile](https://docs.ucloud.cn/api/ufile-api/delete_file)
 
