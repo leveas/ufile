@@ -24,7 +24,7 @@
 
 ## 数据类 API
 
-[前缀列表查询-PrefixFileList](https://docs.ucloud.cn/api/ufile-api/prefix_file_list)
+[获取目录文件列表-ListObjects](https://docs.ucloud.cn/api/ufile-api/list_objects)
 
 [上传文件-PutFile](https://docs.ucloud.cn/api/ufile-api/put_file)
 
