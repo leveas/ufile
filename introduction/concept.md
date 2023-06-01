@@ -93,7 +93,6 @@ US3 提供标准、低频、归档三种存储类型，全面覆盖从热到冷�
 |---- |---- |
 |云主机（UHost） |提供简单高效、处理能力可弹性伸缩的云端计算服务。请参见[UHost产品详情页面](https://console.ucloud.cn/uhost/uhost)。 |
 |内容分发网络（UCDN） |将源站资源缓存到各区域的边缘节点，供您就近快速获取内容。请参见[UCDN产品详情页面](https://console.ucloud.cn/ucdn/ucdndashboard)。 |
-|数据湖分析（USQL） |构建基于Serverless的大数据分析解决方案，方便您分析和处理自己的数据。请参见[USQL产品详情页面](https://console.ucloud.cn/usql/editsql)。 |
 |媒体处理（UMedia） |将存储于UFile的音视频转码成适合在 PC、TV 以及移动终端上播放的格式。并基于海量数据深度学习，对音视频的内容、文字、语音、场景多模态分析，实现智能审核、内容理解、智能编辑。请参见[媒体处理产品详情页面](https://console.ucloud.cn/umedia/umediataskmanage)。 |
 
 ## 使用 US3
