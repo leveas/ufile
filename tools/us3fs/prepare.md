@@ -17,10 +17,10 @@ US3FS基于Linux下fuse和Windows平台下winfsp实现，您的机器需要支�
 
 ## 下载链接
 
-[Linux下载链接](https://ufile-release.cn-bj.ufileos.com/us3fs/us3fs) 或
+[Linux下载链接](https://ufile-release.cn-bj.ufileos.com/us3fs/us3fs_1.7.7) 或
 
 ```shell
-curl -o us3fs https://ufile-release.cn-bj.ufileos.com/us3fs/us3fs
+curl -o us3fs https://ufile-release.cn-bj.ufileos.com/us3fs/us3fs_1.7.7
 ```
 
 [Windows下载链接](https://ufile-release.cn-bj.ufileos.com/us3fs/us3fs.exe)
@@ -90,4 +90,4 @@ D:\us3fs>us3fs.exe --passwd=us3fs.yaml -o debug --uid=0 --gid=0 --level=debug --
 
 > *注意目前Windows下挂载只能前台挂载*
 
- 
+
