@@ -93,14 +93,14 @@ s3fs 工具支持将 Bucket 挂载到本地，像使用本地文件系统一样�
 MacOS 环境
 
 ```
-brew cask install osxfuse  
+brew cask install osxfuse
 brew install s3fs
 ```
 
 RHEL 和 CentOS 7 或更新版本通过 EPEL：
 
 ```
-sudo yum install epel-release  
+sudo yum install epel-release
 sudo yum install s3fs-fuse
 ```
 
@@ -119,9 +119,9 @@ CentOS 6 及其以下版本
 首先，您需要从  上将源码下载到指定目录，以 `/data/s3fs` 为例：
 
 ```
-1. cd /data  
-2. mkdir s3fs  
-3. cd s3fs  
+1. cd /data
+2. mkdir s3fs
+3. cd s3fs
 4. wget https://github.com/s3fs-fuse/s3fs-fuse/archive/v1.83.zip
 ```
 
@@ -130,7 +130,7 @@ CentOS 6 及其以下版本
 CentOS 系统下安装依赖软件：
 
 ```
-  sudo yum install automake gcc-c++ git libcurl-devel libxml2-devel    
+  sudo yum install automake gcc-c++ git libcurl-devel libxml2-devel
   fuse-devel make openssl-devel fuse unzip
 ```
 
@@ -139,13 +139,13 @@ CentOS 系统下安装依赖软件：
 进入安装目录，执行如下命令进行编译和安装：
 
 ```
-1. cd /data/s3fs  
-2. unzip v1.83.zip  
-3. cd s3fs-fuse-1.83/  
-4. ./autogen.sh  
-5. ./configure  
-6. make  
-7. sudo make install  
+1. cd /data/s3fs
+2. unzip v1.83.zip
+3. cd s3fs-fuse-1.83/
+4. ./autogen.sh
+5. ./configure
+6. make
+7. sudo make install
 8. s3fs --version #查看 s3fs版本号
 ```
 
@@ -222,21 +222,21 @@ CentOS 系统下安装依赖软件：
 参数说明如下：
 
 ```
-s3fs ${UFileBucketName} ${LocalFilePath}  
--o url={UFileS3URl} -o passwd_file=~/.passwd-s3fs  
--o dbglevel=info  
--o curldbg,use_path_request_style,allow_other  
--o retries=1 //错误重试次数  
+s3fs ${UFileBucketName} ${LocalFilePath}
+-o url={UFileS3URl} -o passwd_file=~/.passwd-s3fs
+-o dbglevel=info
+-o curldbg,use_path_request_style,allow_other
+-o retries=1 //错误重试次数
 -o multipart_size="8" //分片上传的大小为 8MB，目前仅支持该值 -o
 multireq_max="8" //当上传的文件大于 8MB 是采用分片上传，目前UFile 的 S3
-接入层不允许 PUT 单个文件超过 8MB，所以该值建议必填  
--f //表示前台执行，后台执行则省略  
+接入层不允许 PUT 单个文件超过 8MB，所以该值建议必填
+-f //表示前台执行，后台执行则省略
 -o parallel_count="32" //并行操作数，可以提高分片并发操作，建议不要超过 128
 ```
 
 **示例：**
 
-s3fs s3fs-test /data/vs3fs -o url=[http://internal.s3-cn-bj.ufileos.com](http://internal.s3-cn-bj.ufileos.com/) -o passwd_file=~/.passwd-s3fs -o dbglevel=info -o curldbg,use_path_request_style,allow_other -o retries=1 -o multipart_size="8" -o multireq_max="8" -o parallel_count="32"
+s3fs s3fs-test /data/vs3fs -o url=[http://internal.s3-cn-bj.ufileos.com](http://internal.s3-cn-bj.ufileos.com/) -o passwd_file=~/.passwd-s3fs -o dbglevel=info -o curldbg,use_path_request_style,allow_other,nomixupload -o retries=1 -o multipart_size="8" -o multireq_max="8" -o parallel_count="32"
 
 #### 挂载效果
 
@@ -393,7 +393,7 @@ s3cmd是一个免费的命令行工具,用于使用S3协议上传、检索和管
 #### 安装步骤
 ```
 1.下载安装包
-https://s3tools.org/download ,这里以目前最新版本2.1.0为例 
+https://s3tools.org/download ,这里以目前最新版本2.1.0为例
 2.解压安装包
 tar xzvf s3cmd-2.1.0.tar.gz
 3.移动路径
@@ -405,8 +405,8 @@ s3cmd --configure
 6.填写配置
 vim ~/.s3cfg
 打开当前配置，填写以下参数
-access_key = "TOKEN公钥/API公钥"      
-secret_key = "TOKEN私钥/API私钥"     
+access_key = "TOKEN公钥/API公钥"
+secret_key = "TOKEN私钥/API私钥"
 host_base = "s3协议域名,例如： s3-cn-bj.ufileos.com"
 host_bucket = "请求风格，例如: %(bucket)s.s3-cn-bj.ufileos.com"
 multipart_chunk_size_mb = 8 "us3 支持的s3协议分片大小为8M,所以这里只能填8"
@@ -423,15 +423,15 @@ host_base： 参考 [s3协议域名](https://docs.ucloud.cn/ufile/s3/s3_introduc
 ```
 [default]
 access_key = "TOKEN_xxxxxxxxx"
-access_token = 
-add_encoding_exts = 
-add_headers = 
-bucket_location = US 
+access_token =
+add_encoding_exts =
+add_headers =
+bucket_location = US
 check_ssl_certificate = True
 check_ssl_hostname = True
 connection_pooling = True
-content_disposition = 
-content_type = 
+content_disposition =
+content_type =
 default_mime_type = binary/octet-stream
 delay_updates = False
 delete_after = False
@@ -440,13 +440,13 @@ delete_removed = False
 dry_run = False
 enable_multipart = True
 encrypt = False
-expiry_date = 
-expiry_days = 
-expiry_prefix = 
+expiry_date =
+expiry_days =
+expiry_prefix =
 follow_symlinks = False
 force = False
 get_continue = False
-gpg_passphrase = 
+gpg_passphrase =
 guess_mime_type = True
 host_base = s3-cn-bj.ufileos.com
 host_bucket = %(bucket)s.s3-cn-bj.ufileos.com
@@ -454,20 +454,20 @@ human_readable_sizes = False
 invalidate_default_index_on_cf = False
 invalidate_default_index_root_on_cf = True
 invalidate_on_cf = False
-kms_key = 
+kms_key =
 limit = -1
 limitrate = 0
 list_md5 = False
-log_target_prefix = 
+log_target_prefix =
 long_listing = False
 max_delete = -1
-mime_type = 
+mime_type =
 multipart_chunk_size_mb = 8
 multipart_max_chunks = 10000
 preserve_attrs = True
 progress_meter = True
-proxy_host =  
-proxy_port = 80 
+proxy_host =
+proxy_port = 80
 public_url_use_https = False
 put_continue = False
 recursive = False
@@ -476,7 +476,7 @@ reduced_redundancy = False
 requester_pays = False
 restore_days = 1
 restore_priority = Standard
-secret_key = "xxxxxxxxxxxxxxxxxxx" 
+secret_key = "xxxxxxxxxxxxxxxxxxx"
 send_chunk = 65536
 server_side_encryption = False
 signature_v2 = False
@@ -486,9 +486,9 @@ skip_existing = False
 socket_timeout = 300
 stats = False
 stop_on_error = False
-storage_class = 
+storage_class =
 throttle_max = 100
-upload_id = 
+upload_id =
 urlencoding_mode = normal
 use_http_expect = False
 use_https = False
@@ -514,7 +514,7 @@ s3cmd get s3://bucket1/test.txt
 ```
 
 ##### 4.拷贝文件
-``` 
+```
 s3cmd cp s3://bucket1/test.txt s3://bucket2/test.txt
 ```
 ##### 其他常用操作
@@ -533,7 +533,7 @@ s3cmd ls s3://bucket1
 s3cmd restore s3://bucket1
 ```
 
-## rclone 
+## rclone
 
 ### 功能说明
 
@@ -562,8 +562,8 @@ rclone config
 type = s3
 provider = Other
 env_auth = false
-access_key_id = xxxxxxxx                 
-secret_access_key = xxxxxxxxxxx          
+access_key_id = xxxxxxxx
+secret_access_key = xxxxxxxxxxx
 endpoint = http://s3-cn-bj.ufileos.com   //参考
 location_constraint = cn-bj
 acl = private
