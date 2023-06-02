@@ -110,9 +110,9 @@ us3fs - a single posix file system based on us3
 USAGE
   us3fs [global options] bucket mountpoint
 Version
-  US3FS Version: v1.7.6
-  Commit ID: c173b68
-  Build: 2023-05-16:16:36:57
+  US3FS Version: v1.7.7
+  Commit ID: 9c23e8d
+  Build: 2023-06-02:16:56:45
   Go Version: go1.16.3 linux/amd64
 
 FUSE
@@ -143,6 +143,7 @@ OS
   --read_after_write_finish    read operation will wait all write operation done
   --finish_write_when_release  all written data will be uploaded when release
   --readahead value            Readahead size. e.g.: 1m/1k/1  (default: "0")
+  --max_cache_per_file value   Max cache per file when enable readahead. e.g.: 32m/64m/128m  (default: "1024m")
   --etag value                 Check etag for part. value is percent(0~100) (default: 50)
   --passwd value               specify access file (default: "/etc/us3fs/us3fs.yaml")
   --enable_md5                 Enalbe md5 in http header
@@ -150,6 +151,7 @@ OS
   --gid value                  Specify default gid (default: 0)
   --disable_check_vdir         disable detection of virtual directories
   --update                     Update us3fs to /bin/us3fs
+  --reload                     Let all us3fs processes running on the machine reload the configuration
   -n                           Doesn't check access when mount us3fs
   -l                           Enable local cache for small file
   -p value                     Specify local cache location (default: "/tmp/us3fs/")
@@ -253,7 +255,8 @@ MISC
 | level               | level                   |   level: debug             |
 | storage_class       | storage_class           |   storage_class: STANDARD  |
 | p                   | local_path              |   local_path:/a/b/c        |
-| readahead           | readahead               |   readahead: 8M            |
+| readahead           | readahead               |   readahead: 8m            |
+| max_cache_per_file  | max_cache_per_file      |  max_cache_per_file: 1024m |
 | cache_db            | cache_db                | cache_db: leveldb:/data/us3fs_cachedb |
 | local_write         | local_write             | local_write: true          |
 | max_local_file_size | max_local_file_size     | max_local_file_size: 32M  |
