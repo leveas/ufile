@@ -22,7 +22,7 @@ US3 提供了各种主流语言的 SDK，用于对象存储相关功能的调用
 
 [iOS SDK](https://github.com/ucloud/ufile-sdk-ios)
 
-[Android SDK](https://github.com/ufilesdk-dev/ufile-androidsdk)
+[Android SDK](https://github.com/ucloud/ufile-sdk-android)
 
 [C++ SDK](https://ucloud-us3.github.io/cpp-sdk/%E6%A6%82%E8%BF%B0.html)
 
