@@ -105,3 +105,29 @@
    | HeadFile         | 查询文件基本信息         |
    | GetFile          | 下载文件                 |
    | GetMultiUploadId | 获取正在执行的分片上传id |
+7. **计费项Code说明**：
+
+   us3订单详情中，资源ID的形式：”计费项Code-项目id“，其中计费项以及Code如下
+   
+   | 项目     | 计费项    | 计费项Code    |
+   | ------ | --------- | ----------- |
+   | 存储费用 | 标准存储费用   | ufile-storage |
+   | :::    | 低频存储费用   | ufile-iastorage |
+   | :::    | 归档存储费用   | ufile-acstorage |
+   | :::    | 低频最短存储期限费用   | ufile-iasstorage |
+   | :::    | 归档最短存储期限费用   | ufile-acsstorage |
+   | 流量费用 | 忙时下载流量 | ufile-busyflow |
+   | :::    | 闲时下载流量  | ufile-idleflow  |
+   | :::    | (海外)下载流量  | ufile-flow    |
+   | :::    | CDN 回源流出流量 | ufile-cdnflow  |
+   | 请求费用  | PUT类型请求次数(标准类型) | ufile-standputcount|
+   | :::  | PUT类型请求次数(低频类型)  | ufile-iaputcount |
+   | :::  | PUT类型请求次数(归档类型)  | ufile-acsputcount |
+   | :::  | GET类型请求次数(标准类型)  | ufile-standgetcount| 
+   | :::  | GET类型请求次数(低频类型)  | ufile-iagetcount| 
+   | :::  | GET类型请求次数(归档类型)  | ufile-acsgetcount| 
+   | 数据取回   | 归档文件高优先级解冻  | ufile-archiveretrieval|
+   | :::    | 低频文件取回费用  | ufile-iagetsize |
+   | :::    | 归档文件标准解冻  | ufile-acrestore |
+   | 图片处理 | 基础图片处理    | ufile-imageHandle |
+   | :::  | 图片高级压缩    | ufile-imagecompresscount|
