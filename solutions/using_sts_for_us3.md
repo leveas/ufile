@@ -64,9 +64,9 @@
 
 ## ****步骤四：获取临时访问凭证****
 
-- 使用REST API
+- 使用 REST API 
 
-  使用子账户的API密钥调用****AssumeRole(获取扮演角色的临时身份凭证)，****请确保已为调用者授予STS的管理权限
+  使用子账户的API密钥调用****AssumeRole(获取扮演角色的临时身份凭证)，****请确保已为调用者授予STS的管理权限，当前API访问地址为`https://api.ucloud.cn`
 
   ****请求参数：****
 
@@ -77,7 +77,7 @@
   | PublicKey       | string | 是   | API公钥。            | ************                      |
   | RoleSessionName | string | 是   | 角色会话名称。       | alice                             |
   | RoleUrn         | string | 是   | 要扮演的RAM角色ARN。 | ucs:iam::55936045:role/RamOssTest |
-  | Signature       | string | 是   | 签名。               | ************                      |
+  | Signature       | string | 是   | 签名。[签名方法](https://docs.ucloud.cn/api/summary/signature)               | ************                      |
 
   返回参数：
 
