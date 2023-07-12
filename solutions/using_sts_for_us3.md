@@ -11,7 +11,8 @@
 假设您是一个移动App开发者，希望使用US3服务来保存App的终端用户数据，并且要保证每个App用户之间的数据隔离。此时，您可以使用STS授权用户直接访问US3。
 
 使用STS授权用户直接访问US3的流程如下：
-  ![Untitled](/images/guide/STS整体流程图.png)
+
+![Untitled](/images/guide/STS整体流程图.png)
 
 1. APP用户登录。APP用户和云账号无关，它是APP的终端用户，APP服务器支持APP用户登录。对于每个有效的APP用户来说，需要APP服务器能定义出每个APP用户的最小访问权限。
 2. APP服务器请求STS服务获取一个安全令牌（SecurityToken）。在调用STS之前，APP服务器需要确定App用户的最小访问权限（用RAM Policy来自定义授权策略）以及凭证的过期时间。然后通过扮演角色（AssumeRole）来获取一个代表角色身份的安全令牌（SecurityToken）。
