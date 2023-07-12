@@ -126,8 +126,8 @@
    | :::  | GET类型请求次数(标准类型)  | ufile-standgetcount| 
    | :::  | GET类型请求次数(低频类型)  | ufile-iagetcount| 
    | :::  | GET类型请求次数(归档类型)  | ufile-acsgetcount| 
-   | 数据取回   | 归档文件紧急激活  | ufile-archiveretrieval|
+   | 数据取回   | 归档文件高优先级解冻  | ufile-archiveretrieval|
    | :::    | 低频文件取回费用  | ufile-iagetsize |
-   | :::    | 数据解冻  | ufile-acrestore |
+   | :::    | 归档文件标准解冻  | ufile-acrestore |
    | 图片处理 | 基础图片处理    | ufile-imageHandle |
    | :::  | 图片高级压缩    | ufile-imagecompresscount|
