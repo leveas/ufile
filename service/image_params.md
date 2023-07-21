@@ -28,7 +28,7 @@
 
 图片基本信息包括图片格式、图片大小。
 
-在图片下载 URL 后附加 imageinfo 指示符（区分大小写），即可获取 JSON 格式的图片基本信息。
+在图片下载 URL 后附加 imageinfo 指示符（区分大小写），即可获取 JSON 格式的图片基本信息，格式为：https://bucketname.endpoint/objectname?iopcmd=imageinfo
 
 | 参数名    | 值         | 解释  |
 | ------ | --------- | --- |
@@ -45,7 +45,7 @@
 
 ## EXIF信息获取
 
-EXIF（EXchangeable Image File Format）是专门为数码相机的照片设定的可交换图像文件格式，通过在图片下载 URL 后附加 exif 指示符（区分大小写）获取。
+EXIF（EXchangeable Image File Format）是专门为数码相机的照片设定的可交换图像文件格式，通过在图片下载 URL 后附加 exif 指示符（区分大小写）获取，格式为：https://bucketname.endpoint/objectname?iopcmd=exif
 
 注意：缩略图等经过处理的新图片不支持该方法。
 
