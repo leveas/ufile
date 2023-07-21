@@ -34,6 +34,15 @@
 | ------ | --------- | --- |
 | iopcmd | imageinfo | 主命令 |
 
+获取示例：
+```json
+{
+  "width": 640,
+  "height": 480,
+  "format": "JPEG"
+}
+```
+
 ## EXIF信息获取
 
 EXIF（EXchangeable Image File Format）是专门为数码相机的照片设定的可交换图像文件格式，通过在图片下载 URL 后附加 exif 指示符（区分大小写）获取。
@@ -43,6 +52,46 @@ EXIF（EXchangeable Image File Format）是专门为数码相机的照片设定�
 | 参数名    | 值    | 解释  |
 | ------ | ---- | --- |
 | iopcmd | exif | 主命令 |
+
+获取示例：
+```json
+{
+  "BrightnessValue": "0/100",
+  "ColorSpace": "1",
+  "ComponentsConfiguration": "...",
+  "ExifOffset": "126",
+  "ExifVersion": "0220",
+  "ExposureBiasValue": "0/6",
+  "ExposureMode": "0",
+  "ExposureProgram": "0",
+  "FlashPixVersion": "0100",
+  "ImageLength": "4512",
+  "ImageWidth": "4512",
+  "InteroperabilityOffset": "398",
+  "LightSource": "21",
+  "MaxApertureValue": "192/100",
+  "MeteringMode": "2",
+  "OffsetTime": "+08:00",
+  "OffsetTimeOriginal": "+08:00",
+  "Orientation": "1",
+  "PixelXDimension": "4512",
+  "PixelYDimension": "4512",
+  "ResolutionUnit": "2",
+  "SceneCaptureType": "0",
+  "SceneType": ".",
+  "SensingMethod": "0",
+  "XResolution": "72/1",
+  "YCbCrPositioning": "1",
+  "YResolution": "72/1",
+  "thumbnail:Compression": "6",
+  "thumbnail:InteroperabilityIndex": "R98",
+  "thumbnail:JPEGInterchangeFormat": "510",
+  "thumbnail:JPEGInterchangeFormatLength": "6020",
+  "thumbnail:ResolutionUnit": "2",
+  "thumbnail:XResolution": "72/1",
+  "thumbnail:YResolution": "72/1"
+}
+```
 
 ## 图片缩放
 
