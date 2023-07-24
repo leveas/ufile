@@ -81,7 +81,6 @@
         * [下载与配置使用](/ufile/tools/us3clickhouse/prepare)
         * [性能分析](/ufile/tools/us3clickhouse/testdata)
     * 其他工具
-        * [一致性比对工具](/ufile/tools/tools/consistency)
         * [原迁移工具](/ufile/tools/tools/ufile_import)
 * 开发者指南
     * 存储空间（Bucket）
