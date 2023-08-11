@@ -17,10 +17,10 @@ US3FS基于Linux下fuse和Windows平台下winfsp实现，您的机器需要支�
 
 ## 下载链接
 
-[Linux下载链接](https://ufile-release.cn-bj.ufileos.com/us3fs/us3fs_1.7.7) 或
+[Linux下载链接](https://ufile-release.cn-bj.ufileos.com/us3fs/us3fs_1.7.8) 或
 
 ```shell
-curl -o us3fs https://ufile-release.cn-bj.ufileos.com/us3fs/us3fs_1.7.7
+curl -o us3fs https://ufile-release.cn-bj.ufileos.com/us3fs/us3fs_1.7.8
 ```
 
 [Windows下载链接](https://ufile-release.cn-bj.ufileos.com/us3fs/us3fs.exe)
