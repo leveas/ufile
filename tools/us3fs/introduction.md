@@ -10,7 +10,7 @@ US3FS是一个在Linux/Windows系统环境中，将US3的存储空间（Bucket�
 US3FS现推出2.0内测版本，专门针对大模型场景，对高吞吐读需求、大量列表操作、大量顺序读写进行优化。欢迎联系技术支持，获得内测资格。
 
 US3FS2.0架构图如下：
-![image](/images/US3FS2.0架构图1.png)
+![image](/images/US3FS2.0架构图2.png)
 
 ### 软件版本
 
