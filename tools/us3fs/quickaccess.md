@@ -110,10 +110,10 @@ us3fs - a single posix file system based on us3
 USAGE
   us3fs [global options] bucket mountpoint
 Version
-  US3FS Version: v1.7.7
-  Commit ID: 9c23e8d
-  Build: 2023-06-02:16:56:45
-  Go Version: go1.16.3 linux/amd64
+  US3FS Version: v1.7.8
+  Commit ID: 2532fe8
+  Build: 2023-08-02:15:37:33
+  Go Version: go1.17.13 linux/amd64
 
 FUSE
   -o value                      Specify fuse/winfsp option
@@ -151,7 +151,6 @@ OS
   --gid value                  Specify default gid (default: 0)
   --disable_check_vdir         disable detection of virtual directories
   --update                     Update us3fs to /bin/us3fs
-  --reload                     Let all us3fs processes running on the machine reload the configuration
   -n                           Doesn't check access when mount us3fs
   -l                           Enable local cache for small file
   -p value                     Specify local cache location (default: "/tmp/us3fs/")
