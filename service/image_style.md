@@ -20,7 +20,7 @@ US3支持将多个图片处理参数封装在一个样式（Style）内批量处
 
 
 ## 使用样式
-图片样式创建完成后，用户可以直接将图片样式添加到图片的访问URL上，格式为：https://bucketname.endpoint/objectname?iopstyle=styleName
+图片样式创建完成后，用户可以直接将图片样式添加到图片的访问URL上，格式为：https://bucketname.endpoint/objectname?iopstyle=stylename
 
 
 ## 编辑样式
