@@ -3,7 +3,7 @@
 
 US3支持将多个图片处理参数封装在一个样式（Style）内批量处理图片，可以快速满足复杂的图片处理需求，在控制台支持创建样式、编辑样式以及删除样式等操作，目前仅支持新加坡地域，其他地域若有需要，请联系技术支持。
 
-### 创建样式
+## 创建样式
 1. 登陆US3管理控制台。
 ![image](/images/pic/us3.png)
 2. 在单地域空间管理，单击目标Bucket。
@@ -19,14 +19,17 @@ US3支持将多个图片处理参数封装在一个样式（Style）内批量处
 5. 输入样式名称，点击确定即可
 
 
-### 编辑样式
+## 使用样式
+图片样式创建完成后，用户可以直接将图片样式添加到图片的访问URL上，格式为：https://bucketname.endpoint/objectname?iopstyle=stylename
+
+
+## 编辑样式
 ![image](/images/pic/style_edit.png)
 
 
 
-### 删除样式
+## 删除样式
 ![image](/images/pic/style_delete.png)
-
 
 
 
