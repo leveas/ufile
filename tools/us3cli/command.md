@@ -113,9 +113,8 @@ No.     RegionName      Region
 15      首尔		kr-seoul
 16      东京		jpn-tky
 17      曼谷		th-bkk
-18      inspurcloud     inspurcloud
-19      华北二           cn-wlcb
-20      英国		uk-london
+18      华北二           cn-wlcb
+19      英国		uk-london
 请输入region编号: 0
 内外网列表：
 No.     Network
@@ -262,9 +261,8 @@ No.     RegionName      Region
 15      首尔		kr-seoul
 16      东京		jpn-tky
 17      曼谷		th-bkk
-18      inspurcloud     inspurcloud
-19      华北二           cn-wlcb
-20      英国		uk-london    
+18      华北二           cn-wlcb
+19      英国		uk-london    
 请输入要创建bucket地区编号或地区代码(默认为华北一:cn-bj):0
 Region: cn-bj
 当前账号下业务组分组信息如下：
