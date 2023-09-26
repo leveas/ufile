@@ -270,14 +270,6 @@ access_key: ************************************
 secret_key: ************************************
 endpoint: ufile.cn-north-02.ucloud.cn
 hosts: []
-get_file_list: true
-no_check: true
-writeback: true
-retry: 66
-dcache_timeout: 2h
-entry_timeout: 3h
-attr_timeout: 4h
-etag :100
 ```
 ## 选项列表
 
