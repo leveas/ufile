@@ -48,6 +48,9 @@ us3fs挂载的默认访问权限为当前挂载用户，如果需要允许其他
 * `-o allow_other`：允许任何用户都可以访问文件。
 * `--uid=xxx`：指定默认的用户
 * `--gid=xxx`：指定默认的用户组
+* `--mp_mask`： 用来设置挂载点的权限掩码，只有当`allow_other`选项设置后，该选项才生效，默认值为0000。使用方式基本于umask命令一致；例如需要设置挂载点的权限为770，则使用参数 `-o allow_other --mp_mask 0007`；**注意root用户会忽略非root用户挂载时设置的`mp_mask`**。
+
+
 可通过`id`命令获取用户的uid/gid信息，示例如下：
 
 ```bash
@@ -57,6 +60,18 @@ uid=1001(www) gid=1001(www) groups=1001(www)
 
 ubuntu:~$ us3fs --uid=1001 --gid=1001 -o allow_other <bucket> <mountpoint>
 ```
+
+`mp_mask` 配置示例如下：
+
+| 挂载目录权限 | mp_mask |
+| - | - |
+| rwxrwxrwx | 0000 |
+| rwxrwx--- | 0007 |
+| rwx------ | 0077 |
+| rwxr--r-- | 0033 |
+| rwxrwxr-- | 0003 |
+| rwxr-xr-x | 0022 |
+
 
 * 如果挂载出现以下问题
 
@@ -110,9 +125,9 @@ us3fs - a single posix file system based on us3
 USAGE
   us3fs [global options] bucket mountpoint
 Version
-  US3FS Version: v1.7.9
-  Commit ID: 2532fe8
-  Build: 2023-08-02:15:37:33
+  US3FS Version: v1.7.11
+  Commit ID: 3f2d311
+  Build: 2023-10-11:10:28:50
   Go Version: go1.17.13 linux/amd64
 
 FUSE
@@ -149,6 +164,7 @@ OS
   --enable_md5                 Enalbe md5 in http header
   --uid value                  Specify default uid (default: 0)
   --gid value                  Specify default gid (default: 0)
+  --mp_mask value              Specify mountpoint mask (default: 0)
   --disable_check_vdir         disable detection of virtual directories
   --update                     Update us3fs to /bin/us3fs
   -n                           Doesn't check access when mount us3fs
