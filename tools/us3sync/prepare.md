@@ -17,7 +17,7 @@ yum install -y telnet expect rsync
 ## 下载并解压
 
 ```
-wget -O US3SYNC.tgz "https://ufile-release.cn-bj.ufileos.com/US3SYNC/US3SYNC.tgz" 
+wget -O US3SYNC.tgz "https://ufile-release.cn-bj.ufileos.com/US3SYNC/v1.10.4/US3SYNC.tgz"
 tar xzf US3SYNC.tgz
 cd ./US3SYNC
 ```
