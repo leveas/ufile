@@ -74,7 +74,11 @@ No.     RegionName      Region
 12      胡志明市		vn-sng      
 13      华盛顿		us-ws       
 14      孟买		ind-mumbai  
-15      首尔		kr-seoul    
+15      首尔		kr-seoul
+16      东京		jpn-tky
+17      曼谷		th-bkk
+18      华北二           cn-wlcb
+19      英国		uk-london  
 请输入region编号: 0
 内外网列表：
 No.     Network
@@ -175,7 +179,11 @@ No.     RegionName      Region
 12      胡志明市		vn-sng      
 13      华盛顿		us-ws       
 14      孟买		ind-mumbai  
-15      首尔		kr-seoul     
+15      首尔		kr-seoul
+16      东京		jpn-tky
+17      曼谷		th-bkk
+18      华北二           cn-wlcb
+19      英国		uk-london     
 请输入要创建bucket地区编号或地区代码(默认为北京:cn-bj):0
 Region: cn-bj
 当前账号下项目信息如下：
