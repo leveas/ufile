@@ -22,7 +22,7 @@
     ![](/images/guide/证书托管-手动输入.png)
 5. 通过自定义域名访问US3文件
 绑定自定义域名后可直接通过HTTP协议访问文件，文件URL的格式为http://YourDomainName/ObjectName 。如果用户需要通过HTTPS协议访问文件，需完成步骤4的证书托管。
-> 举例：目标存储空间examplebucket中存放了exampleobject.jpg的文件，自定义域名为www.demo.com，且已完成证书托管，此时您可以使用https://www.demo.com/exampleobject.jpg访问目标文件。
+> 举例：目标存储空间examplebucket中存放了exampleobject.jpg的文件，自定义域名为www.demo.com ，且已完成证书托管，此时您可以使用https://www.demo.com/exampleobject.jpg访问目标文件。
 
 ## 解绑自定义域名
 当用户的自定义域名不再使用时，可以手动解除域名绑定。
