@@ -76,6 +76,8 @@ US3 目前的 S3 协议模块对标准 S3 协议的支持如下表：
 
 * 目前不支持标签功能（Tagging）
 
+* ListObjects请求中的max-keys参数(请求返回对象的最大数量)最大值为5000
+
 ### 访问权限定义（ACL）
 
 | US3 ACL           | [AWS S3 Canned ACL](https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#canned-acl)     |
