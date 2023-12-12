@@ -14,10 +14,10 @@
 
 ## 上传文件
 
-在文件管理页单击“上传文件”，弹窗中可以设置路径前缀，以及选择存储类型。
+在文件管理页单击“上传文件”，弹窗中可以设置路径前缀、对象标签以及选择存储类型。
 > 其中“继承Bucket”是指以Bucket存储类型为准，如需了解存储类型相关说明，请参见[存储类型](https://docs.ucloud.cn/ufile/introduction/storage_type)
 
-![image](/images/guide-management/上传文件.png)
+![image](/images/guide-management/上传文件2.png)
 
 ## 修改 MIME-Type
 
