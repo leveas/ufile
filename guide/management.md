@@ -1,4 +1,4 @@
-
+![image](https://github.com/lorraineya/ufile/assets/111561221/da381fde-6b8f-45d3-8904-16cd088c11ce)
 
 # 文件管理
 
@@ -81,3 +81,38 @@
 
 ![image](/images/guide-management/批量导出url.png)
 ![image](/images/guide-management/批量导出url2.png)
+
+
+## 设置HTTP头
+
+文件（Object）的 HTTP 头部（元数据头部 ）是服务器以 HTTP 协议传送 HTML 资料到浏览器前所送出的字符串。通过修改 HTTP 头部（元数据头部），可以改变页面的响应形式，或者传达配置信息，例如修改缓存时间。修改对象的 HTTP 头部不会修改对象本身。
+对象元数据包括有两种元数据：HTTP标准属性（HTTP Header）和用户定义元数据（User Meta）。
+
+**HTTP标准属性（HTTP Header）**
+为上传至存储空间中的每个文件保留如下HTTP标准属性。
+
+| **名称**            | **描述**                   | **示例**                        |
+| :------------------ | :------------------------- | :------------------------------ |
+| MIME-Type           | 文件的 MIME 信息           | image/jpeg                      |
+| Content-Encoding    | 文件的编码格式             | gzip                            |
+| Content-Language    | 声明Object内容使用的语言。 | zh-CN                           |
+| Content-Disposition | MIME 协议的扩展            | attachment;filename="fname.ext" |
+| Cache-Control       | 文件的缓存机制             | no-cache;max-age=200            |
+| Expires             | 用来控制缓存的失效日期     | Wed, 21 Oct 2015 07:28:00 GMT   |
+
+
+**用户自定义元数据（User Meta）**
+用户可以在上传文件（Object）时，为文件添加自定义元数据（User Meta），用于标识文件的用途或属性等。
+
+- 一个Object可以有多个自定义元数据，但所有的自定义元数据总大小不能超过8 KB。
+- 自定义元数据是一组键值对，元数据名称必须以X-Ufile-Meta-开头。
+- 调用GetFile或者HeadFile接口时，将在HTTP头部返回自定义元数据。
+
+  
+
+直接单击“操作”下的“···”选择“设置HTTP头”即可完成修改。
+
+![image](/images/guide/设置header头-文件列表.png)
+![image](/images/guide/设置http头-界面.png)
+
+
