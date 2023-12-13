@@ -1,4 +1,4 @@
-![image](https://github.com/lorraineya/ufile/assets/111561221/da381fde-6b8f-45d3-8904-16cd088c11ce)
+
 
 # 文件管理
 
