@@ -20,7 +20,7 @@
     * [日志管理](/ufile/guide/logging)
     * [文件管理](/ufile/guide/management)
     * [生命周期](/ufile/guide/lifecycle)
-	* [静态网站托管](/ufile/guide/static_websit_hosring)
+    * [静态网站托管](/ufile/guide/static_websit_hosring)
     * [域名管理](/ufile/guide/domain)
     * [镜像回源](/ufile/guide/mirror)
     * [跨区域复制](/ufile/guide/multisite)
@@ -28,6 +28,7 @@
     * [防盗链](/ufile/guide/referer)
     * [统计报表](/ufile/guide/dashboard)
     * [令牌管理](/ufile/guide/token)
+    * [对象标签](/ufile/guide/object_tagging)
 * 增值服务
     * 图片处理服务
        * [简介](/ufile/service/introduction)
