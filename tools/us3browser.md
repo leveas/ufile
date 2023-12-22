@@ -1,6 +1,6 @@
 # US3Browser 下线说明
 
-US3Browser目前已下线。**US3Browser已不再维护更新**，为避免因使用US3Browser造成数据损坏等影响，请尽快切换为US3管理控制台或其他US3常用工具。如有可视化界面工具的需求，推荐您使用S3Browser请参见[AWS客户端工具](https://docs.ucloud.cn/ufile/s3/s3_application?id=%e6%96%87%e4%bb%b6%e6%b5%8f%e8%a7%88%e5%99%a8%e5%b7%a5%e5%85%b7)
+US3Browser于2023年4月17日下线。**US3Browser已不再维护更新**，为避免因使用US3Browser造成数据损坏等影响，请尽快切换为US3管理控制台或其他US3常用工具。如有可视化界面工具的需求，推荐您使用S3Browser请参见[AWS客户端工具](https://docs.ucloud.cn/ufile/s3/s3_application?id=%e6%96%87%e4%bb%b6%e6%b5%8f%e8%a7%88%e5%99%a8%e5%b7%a5%e5%85%b7)
 
 ## 概述
 
