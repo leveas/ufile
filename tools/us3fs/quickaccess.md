@@ -125,9 +125,9 @@ us3fs - a single posix file system based on us3
 USAGE
   us3fs [global options] bucket mountpoint
 Version
-  US3FS Version: v1.7.11
-  Commit ID: 3f2d311
-  Build: 2023-10-11:10:28:50
+  US3FS Version: v2.0.0
+  Commit ID: 5e995f0
+  Build: 2023-12-26:00:31:38
   Go Version: go1.17.13 linux/amd64
 
 FUSE
@@ -177,6 +177,12 @@ OS
   --perf_dump value            How long to output the performance dump (default: 1h0m0s)
   --skip_ne_dir_lookup         Skip non-essential directory checking, such as files ending in ".log",".png",".jpg", etc.
   --storage_class value        Storage type, including "STANDARD", "IA" (default: "STANDARD")
+  --enable_remote_cache
+  --cache_dirs value           specify cache db path, e.g.: /tmp/read-cache1,/tmp/read-cache2
+  --cache_size_limit value     specify cache size limit, unit is GB (default: 4)
+  --master_addr value          master server addr
+  --data_port value            if data_port is specified, then other clients will connect it to get chunk data (default: 0)
+  --page_size value            (default: 1048576)
 
 MISC
   --help, -h  show help
@@ -277,6 +283,12 @@ MISC
 | max_local_file_size | max_local_file_size     | max_local_file_size: 32M  |
 | finish_write_when_release | finish_write_when_release | finish_write_when_release: true |
 | read_after_write_finish   | read_after_write_finish   | read_after_write_finish: true |
+| enable_remote_cache   | enable_remote_cache   | enable_remote_cache: true |
+| cache_dirs   | cache_dirs   | cache_dirs: /mnt/nvme01,/mnt/nvme02 |
+| cache_size_limit   | cache_size_limit   | cache_size_limit: 100 |
+| master_addr   | master_addr   | master_addr: <master_ip>:<master_port>  |
+| data_port   | data_port   | data_port: 3333 |
+| page_size   | page_size   | page_size: 8388608 |
 
 - 挂载参数配置在配置文件样例
 编辑/etc/us3fs/us3fs.yaml（如果没有该目录需要自行创建）依据具体需求将挂载参数写在配置文件，简化挂载命令
@@ -474,6 +486,25 @@ sys     0m0.133s
 对于大量小文件场景，如果对性能有要求，可指定`-l`开启本地本地缓存。当启用本地缓存后，us3fs挂载后首先会将指定缓存目录下已存在的所有小于等于4MB的文件按照其路径上传到bucket中。当写入文件大小不大于4MB，文件会尝试写入本地缓存目录，写入成功后即返回，后端异步上传到us3。写入失败（如权限不足，空间不足等）则仍然使用同步方式写入us3对象存储
 
 *注：异步上传可能出现写入后端失败,us3fs会一直重试直到写入成功。*
+
+### 高读吞吐场景
+
+* `cache_dirs`: 设置本地读缓存磁盘，推荐使用本地nvme盘来存放读缓存内容，可设置多个盘，使用 `,` 号分割，注意缓存盘尽量不要使用系统盘，避免由于瞬间的IO上涨导致系统hang住，推荐使用独立的本地nvme盘（盘的读写吞吐能在2GB+）。
+* `cache_size_limit`: 设置缓存盘存储量使用上限，当缓存的内容达到该上限时，会进行LRU淘汰
+* `page_size`: 在开启本地读缓存功能时，需要将page_size从默认的`1048576`调整到`8388608`
+
+### 共享读缓存
+
+当多个挂载点之间需要共享读缓存内容时，可以通过执行
+
+```
+us3fs run-master --listen_addr 192.168.0.10:6667
+```
+
+命令来启动一个master节点运行，同时将其余的挂载点的 `master_addr` 参数设置为 `192.168.0.10:6667`, 这样各个挂载点会同该master定期保持心跳，这一组挂载点将会成为一个小型的读缓存集群
+
+* `enable_remote_cache`: 当一个挂载点开启该参数后，其余的挂载点就可能会连接上它检查是否有缓存数据可读，当发现目标数据存在时，会尝试从该挂载点读取数据内容
+* `data_port`: 当一个挂载点开启`enable_remote_cache`后，暴露在哪个端口对外进行访问
 
 ## 自动挂载
 
