@@ -17,10 +17,10 @@ US3FS基于Linux下fuse和Windows平台下winfsp实现，您的机器需要支�
 
 ## 下载链接
 
-[Linux下载链接](https://ufile-release.cn-bj.ufileos.com/us3fs/us3fs_1.7.12) 或
+[Linux下载链接](https://ufile-release.cn-bj.ufileos.com/us3fs/us3fs_2.0.0) 或
 
 ```shell
-curl -o us3fs https://ufile-release.cn-bj.ufileos.com/us3fs/us3fs_1.7.12
+curl -o us3fs https://ufile-release.cn-bj.ufileos.com/us3fs/us3fs_2.0.0
 ```
 
 [Windows下载链接](https://ufile-release.cn-bj.ufileos.com/us3fs/us3fs.exe)
@@ -84,7 +84,7 @@ D:\us3fs>dir
                2 个目录 213,768,716,288 可用字节
 # 进行挂载操作
 # * 这里挂载到x盘，并且指定uid,gid为0的用户，日志级别为debug，预读窗口为32MiB，挂载的US3桶名为rickwu
-D:\us3fs>us3fs.exe --passwd=us3fs.yaml -o debug --uid=0 --gid=0 --level=debug --readahead=32m rickwu x:
+D:\us3fs>us3fs.exe --passwd=us3fs.yaml -o debug --uid=0 --gid=0 --level=debug --readahead=32m <bucket> x:
 
 ```
 
