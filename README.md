@@ -13,6 +13,7 @@
     * [计费规则](/ufile/bill/directions)
     * [欠费处理](/ufile/bill/arrears)
     * [计费案例](/ufile/bill/case)
+    * [资源包](/ufile/bill/resource_plan)
 * 快速上手
     * [开通 US3 服务](/ufile/quick/start_service)
     * [开始使用 US3](/ufile/quick/quick_start)
