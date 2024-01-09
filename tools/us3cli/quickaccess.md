@@ -40,6 +40,7 @@
 ```
 us3cli config  [--ls][--su <配置名>][--rm <配置名>][--cat <配置名>][--encrypt][--ssl][--proxy [代理地址]]
 			   [--accesskey <API/Token公钥>][--secretkey <API/Token私钥>][--endpoint <访问域名>]
+                           [--language <ZH/EN]
 ```
 
 常用配置创建方式分为两种：交互式配置和一键配置，命令格式相同，使用方式不同
@@ -52,6 +53,7 @@ us3cli config  [--ls][--su <配置名>][--rm <配置名>][--cat <配置名>][--e
 
 ```
 #./us3cli config
+请输入语言(Please enter the language): ZH/EN, 默认为ZH(default is ZH) :ZH
 请输入当前配置项名称: config1
 开始创建新配置项：[ config1 ]
 是否启用配置加密(y or n) ? n
@@ -103,7 +105,7 @@ Endpoint: cn-bj.ufileos.com
 使用示例:
 
 ```
-./us3cli config config1 --accesskey TOKEN_13be86********* --secretkey BAtrQO8LYdgve1HS_benbK-MXNTl3********** --endpoint cn-bj.ufileos.com
+./us3cli config config1 --accesskey TOKEN_13be86********* --secretkey BAtrQO8LYdgve1HS_benbK-MXNTl3********** --endpoint cn-bj.ufileos.com --language ZH
 ```
 
 #### 配置项管理
@@ -134,7 +136,7 @@ Endpoint: cn-bj.ufileos.com
 ./us3cli ls us3://bucket1 --config ~/go/src/userconfig.yaml
 
 #3.通过配置项内容直接指定临时配置
-./us3cli ls us3://bucket1 --accesskey "xxxxxx" --secretkey "xxxxxx" --endpoint "xxxxxx"
+./us3cli ls us3://bucket1 --accesskey "xxxxxx" --secretkey "xxxxxx" --endpoint "xxxxxx" 
 ```
 
 注:当前版本支持自定义配置文件，但只支持与工具自动生成配置文件内容相同的配置文件
@@ -148,6 +150,7 @@ endpoint: "ufile.cn-north-02.ucloud.cn"
 encrypt: "false"
 enablessl: "false"
 proxy: "http://ip:port or https://ip:port"
+language: "ZH"
 ```
 
 ## 创建存储空间
