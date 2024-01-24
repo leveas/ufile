@@ -125,9 +125,9 @@ us3fs - a single posix file system based on us3
 USAGE
   us3fs [global options] bucket mountpoint
 Version
-  US3FS Version: v2.0.1
-  Commit ID: 517fbe5
-  Build: 2024-01-10:10:16:56
+  US3FS Version: v2.0.2
+  Commit ID: 223949d
+  Build: 2024-01-24:10:32:50
   Go Version: go1.17.13 linux/amd64
 
 FUSE
