@@ -40,6 +40,7 @@ config命令用于管理配置文件。
 ```
 us3cli config  [--ls][--su <配置名>][--rm <配置名>][--cat <配置名>][--encrypt][--ssl][--proxy [代理地址]]
 			   [--accesskey <API/Token公钥>][--secretkey <API/Token私钥>][--endpoint <访问域名>]
+                           [--language <ZH/EN>] 
 ```
 
 ### 参数说明
@@ -48,6 +49,7 @@ us3cli config  [--ls][--su <配置名>][--rm <配置名>][--cat <配置名>][--e
   -a, --accesskey string   :用于访问us3的API密钥或Token公钥
       --cat string         :打印指定配置项内容
       --encrypt            :是否配置加密
+      --language           :us3cli的语言配置,ZH/EN,可选,默认为ZH中文      
   -e, --endpoint string    :固定域名，可在地域和域名页查看
   -h, --help               :查看当前命令帮助
       --ls                 :列出当前所有配置项
@@ -68,6 +70,7 @@ us3cli config  [--ls][--su <配置名>][--rm <配置名>][--cat <配置名>][--e
 | encrypt   | 是否使用配置加密     | false 或 true                                                |
 | enablessl | 是否使用https        | false 或 true                                                |
 | proxy     | 代理地址             | “ip:port”                                                    |
+| language  | 工具显示语言          |  ZH 或 EN                                                    |   
 
 自定义配置文件格式，填写说明同上：
 
@@ -78,6 +81,7 @@ endpoint: "ufile.cn-north-02.ucloud.cn"
 encrypt: "false"
 enablessl: "false"
 proxy: "http://ip:port or https://ip:port"
+language: "EN"
 ```
 
 ### 使用示例
@@ -88,6 +92,7 @@ proxy: "http://ip:port or https://ip:port"
 
 ```
 #./us3cli config
+请输入语言(Please enter the language): ZH/EN, 默认为ZH(default is ZH) : ZH
 请输入当前配置项名称: config1
 开始创建新配置项：[ config1 ]
 是否启用配置加密(y or n) ? n
@@ -179,12 +184,13 @@ ConfigName：config2
 AccessKey: TOKEN_13be86*********
 SecretKey: BAtrQO8LYdgve1HS_benbK-MXNTl3**********
 Endpoint: cn-bj.ufileos.com
+Language: ZH
 ```
 
 2.非交互式配置
 
 ```
-./us3cli config config3 --accesskey TOKEN_AAGASGAZVZV**** --secretkey USAsflmTAAF****** --endpoint cn-bj.ufileos.com
+./us3cli config config3 --accesskey TOKEN_AAGASGAZVZV**** --secretkey USAsflmTAAF****** --endpoint cn-bj.ufileos.com --language EN
 Configuration file [ config3 ] has been updated
 ```
 

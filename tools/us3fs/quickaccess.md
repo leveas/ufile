@@ -125,9 +125,9 @@ us3fs - a single posix file system based on us3
 USAGE
   us3fs [global options] bucket mountpoint
 Version
-  US3FS Version: v2.0.0
-  Commit ID: 5e995f0
-  Build: 2023-12-26:00:31:38
+  US3FS Version: v2.0.2
+  Commit ID: 223949d
+  Build: 2024-01-24:10:32:50
   Go Version: go1.17.13 linux/amd64
 
 FUSE
@@ -183,6 +183,7 @@ OS
   --master_addr value          master server addr
   --data_port value            if data_port is specified, then other clients will connect it to get chunk data (default: 0)
   --page_size value            (default: 1048576)
+  --fuse_session_cnt value     (default: 0)
 
 MISC
   --help, -h  show help
@@ -289,6 +290,7 @@ MISC
 | master_addr   | master_addr   | master_addr: <master_ip>:<master_port>  |
 | data_port   | data_port   | data_port: 3333 |
 | page_size   | page_size   | page_size: 8388608 |
+| fuse_session_cnt | fuse_session_cnt | fuse_session_cnt: 4 |
 
 - 挂载参数配置在配置文件样例
 编辑/etc/us3fs/us3fs.yaml（如果没有该目录需要自行创建）依据具体需求将挂载参数写在配置文件，简化挂载命令
@@ -480,6 +482,7 @@ sys     0m0.133s
 * `readahead`：预读窗口大小，由于fuse自身有读写窗口的限制，一定的预读大小对读取性能有显著提升。建议设置在16m~32m，但会增加内存消耗，可以适当缩小预读窗口。
 * `keep_pagecache`: 尽可能缓存数据内容在vfs pagecache中，直到文件的修改时间和大小发生变化，才无效掉pagecache中的历史数据。
 * `wb`: 该参数会使得写入的IO会尽量在pagecache中合并，然后以大IO(默认128K)发送到us3fs。
+* `fuse_session_cnt`: 设置与内核fuse模块通信的连接数，对cpu和内存负载有一定影响，建议在资源空闲的机器上可开启，并将数量设置在CPU核数以内，开启后读写性能都有一定程度的提升
 
 ### 小文件场景
 
