@@ -125,11 +125,10 @@ us3fs - a single posix file system based on us3
 USAGE
   us3fs [global options] bucket mountpoint
 Version
-  US3FS Version: v2.0.2
-  Commit ID: 223949d
-  Build: 2024-01-24:10:32:50
+  US3FS Version: v2.0.3
+  Commit ID: 96bd92a
+  Build: 2024-02-27:17:02:18
   Go Version: go1.17.13 linux/amd64
-
 FUSE
   -o value                      Specify fuse/winfsp option
   --entry_timeout value         How long to cache dentry for inode for fuse. (default: 5m0s)
