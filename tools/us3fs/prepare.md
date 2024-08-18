@@ -7,7 +7,7 @@ US3FS基于Linux下fuse和Windows平台下winfsp实现，您的机器需要支�
 建议您将US3FS运行在以下环境中：
 
 * Linux
-  * ceontos 7.0及以上 (可通过`cat /etc/redhat-release`查看)
+  * centos 7.0及以上 (可通过`cat /etc/redhat-release`查看)
   * ubuntu 16.04及以上 (可通过`cat /etc/issue`查看)
 * Windows
   * 下载[WinFsp Installer](https://github.com/billziss-gh/winfsp/releases/download/v1.9/winfsp-1.9.21096.msi)
@@ -17,10 +17,10 @@ US3FS基于Linux下fuse和Windows平台下winfsp实现，您的机器需要支�
 
 ## 下载链接
 
-[Linux下载链接](https://ufile-release.cn-bj.ufileos.com/us3fs/us3fs_2.0.3) 或
+[Linux下载链接](https://ufile-release.cn-bj.ufileos.com/us3fs/us3fs_2.0.5) 或
 
 ```shell
-curl -o us3fs https://ufile-release.cn-bj.ufileos.com/us3fs/us3fs_2.0.3
+curl -o us3fs https://ufile-release.cn-bj.ufileos.com/us3fs/us3fs_2.0.5
 ```
 
 [Windows下载链接](https://ufile-release.cn-bj.ufileos.com/us3fs/us3fs.exe)
