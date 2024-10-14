@@ -57,7 +57,7 @@ curl -o us3fs http://ufile-release.cn-bj.ufileos.com/us3fs%2Fus3fs
 
 ## 配置账号访问信息
 
-编辑/etc/us3fs/us3fs.conf并增加如下信息(如果没有该目录需要自行创建):
+编辑/etc/us3fs/us3fs.yaml并增加如下信息(如果没有该目录需要自行创建):
 
 ```yaml
 bucket: your_bucket
@@ -174,7 +174,7 @@ OS
   --debug_u          set debug level for u
   --readahead value  readahead size, (MB) (default: 16)
   --critical         Check every part's etag, this option will cost cpu
-  --passwd value     specify access file (default: "/etc/us3fs/us3fs.conf")
+  --passwd value     specify access file (default: "/etc/us3fs/us3fs.yaml")
   --enable_md5       enalbe md5 in http header
   --uid value        specify default uid (default: 0)
   --gid value        specify default gid (default: 0)
@@ -214,7 +214,7 @@ us3fs基于fuse实现，所以除了us3fs自身的设置外，还支持fuse的�
 | debug_u        | 指定us3fs日志级别为debug，默认为Info级别      |
 | readahead      | 指定预读窗口最大值(单位MB)，默认为16          |
 | critical       | 写入文件时校验每个分片的etag，默认关闭        |
-| passwd         | 指定账户文件，默认路径`/etc/us3fs/us3fs.conf` |
+| passwd         | 指定账户文件，默认路径`/etc/us3fs/us3fs.yaml` |
 | enable_md5     | 在http请求头中增加md5校验，默认关闭           |
 | uid            | 指定文件所属的默认用户，默认当前用户          |
 | gid            | 指定文件所属的默认用户组，默认当前用户组      |
