@@ -217,7 +217,7 @@ OS
   --level value           Set log level: error/warn/info/debug (default: "info")
   --readahead value       Readahead size. e.g.: 1m/1k/1  (default: "0")
   --etag value            Check etag for part. value is percent(0~100) (default: 50)
-  --passwd value          specify access file (default: "/etc/us3fs/us3fs.conf")
+  --passwd value          specify access file (default: "/etc/us3fs/us3fs.yaml")
   --enable_md5            Enalbe md5 in http header
   --uid value             Specify default uid (default: -1)
   --gid value             Specify default gid (default: -1)
@@ -533,7 +533,7 @@ User=<user>
 Group=<group>
 Restart=always
 RestartSec=10
-ExecStart=/bin/us3fs --passwd=/etc/us3fs/us3fs.conf --keep_pagecache <your_bucket> <mountpoint>
+ExecStart=/bin/us3fs --passwd=/etc/us3fs/us3fs.yaml --keep_pagecache <your_bucket> <mountpoint>
 ExecStop=/bin/umount <monutpoint>
 [Install]
 WantedBy=multi-user.target
