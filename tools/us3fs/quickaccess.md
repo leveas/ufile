@@ -125,9 +125,9 @@ us3fs - a single posix file system based on us3
 USAGE
   us3fs [global options] bucket mountpoint
 Version
-  US3FS Version: v2.0.8
-  Commit ID: c458177
-  Build: 2024-09-19:16:12:18
+  US3FS Version: v2.0.9
+  Commit ID: fedb9fa
+  Build: 2024-10-16:19:46:13
   Go Version: go1.17.13 linux/amd64
 FUSE
   -o value                      Specify fuse/winfsp option
@@ -183,6 +183,7 @@ OS
   --data_port value            if data_port is specified, then other clients will connect it to get chunk data (default: 0)
   --page_size value            (default: 1048576)
   --fuse_session_cnt value     (default: 0)
+  --enable_recursive_dir       enable recursive read dir（default: false）
 
 MISC
   --help, -h  show help
@@ -290,6 +291,7 @@ MISC
 | data_port   | data_port   | data_port: 3333 |
 | page_size   | page_size   | page_size: 8388608 |
 | fuse_session_cnt | fuse_session_cnt | fuse_session_cnt: 4 |
+| enable_recursive_dir | enable_recursive_dir | enable_recursive_dir: true |
 
 - 挂载参数配置在配置文件样例
 编辑/etc/us3fs/us3fs.yaml（如果没有该目录需要自行创建）依据具体需求将挂载参数写在配置文件，简化挂载命令
