@@ -125,9 +125,9 @@ us3fs - a single posix file system based on us3
 USAGE
   us3fs [global options] bucket mountpoint
 Version
-  US3FS Version: v2.0.9
-  Commit ID: fedb9fa
-  Build: 2024-10-16:19:46:13
+  US3FS Version: v2.1.0
+  Commit ID: 879f7d4
+  Build: 2024-10-28:19:16:23
   Go Version: go1.17.13 linux/amd64
 FUSE
   -o value                      Specify fuse/winfsp option
@@ -184,6 +184,7 @@ OS
   --page_size value            (default: 1048576)
   --fuse_session_cnt value     (default: 0)
   --enable_recursive_dir       enable recursive read dir（default: false）
+  --pprof_listen_ip value      ppof listen ip (default: "127.0.0.1")
 
 MISC
   --help, -h  show help
@@ -292,6 +293,7 @@ MISC
 | page_size   | page_size   | page_size: 8388608 |
 | fuse_session_cnt | fuse_session_cnt | fuse_session_cnt: 4 |
 | enable_recursive_dir | enable_recursive_dir | enable_recursive_dir: true |
+| pprof_listen_ip | pprof_listen_ip | pprof_listen_ip: 127.0.0.1 |
 
 - 挂载参数配置在配置文件样例
 编辑/etc/us3fs/us3fs.yaml（如果没有该目录需要自行创建）依据具体需求将挂载参数写在配置文件，简化挂载命令

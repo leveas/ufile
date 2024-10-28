@@ -4,7 +4,7 @@
 
 US3 提供了各种主流语言的 SDK，用于对象存储相关功能的调用，各个 SDK 的 Git 仓库链接如下：
 
-[JS SDK](https://github.com/ufilesdk-dev/ufile-jssdk)
+[JS SDK](https://ucloud-us3.github.io/js-sdk/%E6%A6%82%E8%BF%B0.html)
 
 [C SDK](https://ucloud-us3.github.io/c-sdk/%E6%A6%82%E8%BF%B0.html)
 
@@ -16,7 +16,7 @@ US3 提供了各种主流语言的 SDK，用于对象存储相关功能的调用
 
 [C\# SDK](https://github.com/ufilesdk-dev/ufile-csharpsdk)
 
-[NodeJS SDK](https://github.com/ufilesdk-dev/ufile-nodejssdk)
+[NodeJS SDK](https://ucloud-us3.github.io/node.js-sdk/%E6%A6%82%E8%BF%B0.html)
 
 [Java SDK](https://ucloud-us3.github.io/java-sdk/%E6%A6%82%E8%BF%B0.html)
 
