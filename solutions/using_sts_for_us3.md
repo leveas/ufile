@@ -102,7 +102,7 @@ func PutFile() {
 	config := &ufsdk.Config{
 		PublicKey:  "STS.******",
 		PrivateKey: "******",
-		BucketHost: "cn-bj.ufileos.com",
+		FileHost: "cn-bj.ufileos.com",
 		BucketName: "examplebucket",
 	}
 	head := http.Header{}
